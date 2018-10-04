@@ -66,3 +66,19 @@ brew install node
 npm i
 ```
 
+## Project Timeline and Goals
+October 6: have some initial wireframing done, have a solid understanding
+of what the data will look like and how we want to store/model it, every team
+member should have a development ticket  
+October 14: complete static site pages/templates, database schema, route to
+return all resources  
+November 1: complete the student user UI -- the "build your path to STEM"
+feature should produce a result that the student can view, start thinking
+about admin user interaction  
+Thanksgiving: a student user can (easily) build and save their personalized
+path to STEM, an admin user can add new rows to the database and delete old 
+ones. Static/templated pages complete.  
+End of semester: application v0: admin user can easily interact with the content
+of the website and update data with as much flexibility as we 
+can reasonably offer, nice user flow through interactive components, clear
+interactions, application displays all information requested by client.  
