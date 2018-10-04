@@ -12,15 +12,15 @@ aims to help students identify steps they can take toward a STEM career that
 are tailored to their location and interests.
 
 ## Team Members
-Noah Adler
-Mohsin Rizvi
-Peter Lam
-Will Rusk
-Rebecca Glass (Designer)
-Emily Tran
-Ben London
-Eva Denman
-Amina Dieng
+Noah Adler  
+Mohsin Rizvi  
+Peter Lam  
+Will Rusk  
+Rebecca Glass (Designer)  
+Emily Tran  
+Ben London  
+Eva Denman  
+Amina Dieng  
 
 ## Technology Stack
 React.js
