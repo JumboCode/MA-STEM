@@ -23,9 +23,9 @@ Eva Denman
 Amina Dieng  
 
 ## Technology Stack
-React.js
-Ruby on Rails API
-PostgreSQL
+React.js  
+Ruby on Rails API  
+PostgreSQL  
 
 
 ## Getting started:
