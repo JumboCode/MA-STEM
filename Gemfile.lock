@@ -213,6 +213,8 @@ GEM
     tilt (2.0.6)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    uglifier (4.1.19)
+      execjs (>= 0.3.0, < 3)
     warden (1.2.7)
       rack (>= 1.0)
     websocket-driver (0.6.5)
@@ -228,14 +230,17 @@ DEPENDENCIES
   devise!
   foreman (~> 0.82.0)
   inherited_resources!
+  jquery-rails
   listen (~> 3.0.5)
   pg
   puma (~> 3.0)
   rails (~> 5.0.1)
+  sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
   tzinfo-data
+  uglifier (>= 2.7.2)
 
 BUNDLED WITH
    1.16.5
