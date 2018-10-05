@@ -5,12 +5,10 @@ class App extends Component {
   constructor () {
     super()
     this.state = {active: false}
-    this.getDrinks = this.getDrinks.bind(this)
-    this.getDrink = this.getDrink.bind(this)
   }
 
   componentDidMount () {
-    this.getDrinks()
+    console.log("mount");
   }
 
   fetch (endpoint) {
@@ -22,20 +20,21 @@ class App extends Component {
     })
   }
 
-  getDrinks () {
-    this.fetch('api/drinks')
-      .then(drinks => {
-        this.setState({drinks: drinks})
-      })
-  }
+  /* example API endpoint calls using fetch */
+  // getDrinks () {
+  //   this.fetch('api/drinks')
+  //     .then(drinks => {
+  //       this.setState({drinks: drinks})
+  //     })
+  // }
 
-  getDrink (id) {
-    this.fetch(`api/drinks/${id}`)
-      .then(drink => this.setState({drink: drink}))
-  }
+  // getDrink (id) {
+  //   this.fetch(`api/drinks/${id}`)
+  //     .then(drink => this.setState({drink: drink}))
+  // }
 
   render () {
-    let {drinks, drink, active} = this.state
+    let {active} = this.state
     return active? (
       <Container text>
           <Header as='h2' icon textAlign='center'>
@@ -44,31 +43,13 @@ class App extends Component {
             MA STEM
           </Header.Content>
         </Header>
-        <Button.Group fluid widths={drinks.length}>
-          {Object.keys(drinks).map((key) => {
-            return <Button active={drink && drink.id === drinks[key].id} fluid key={key} onClick={() => this.getDrink(drinks[key].id)}>
-              {drinks[key].title}
-            </Button>
-          })}
-        </Button.Group>
-        <Divider hidden />
-        {drink &&
-          <Container>
-            <Header as='h2'>{drink.title}</Header>
-            {drink.description && <p>{drink.description}</p>}
-            {drink.ingredients &&
-              <Segment.Group>
-                {drink.ingredients.map((ingredient, i) => <Segment key={i}>{ingredient.description}</Segment>)}
-              </Segment.Group>
-            }
-            {drink.steps && <p>{drink.steps}</p>}
-          </Container>
-        }
       </Container>
     ): ( <Container text>
       <Dimmer active inverted>
-        <Loader content='Loading' />
-        <Button onClick={this.setState({active:true})}>hello</Button>
+        <Loader content='Loading MA-STEM' />
+        <Button onClick={() => {this.setState({active:true})}}>
+          Click Me!
+        </Button>
       </Dimmer>
       </Container>
     )
