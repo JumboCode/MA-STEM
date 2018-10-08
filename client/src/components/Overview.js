@@ -1,16 +1,14 @@
 import React, { Component } from "react"; // eslint-disable-line no-unused-vars
 
-class Overview extends Component {
+export class Overview extends Component {
   constructor () {
     super()
-    this.state = {}
   }
 
   render () {
+    console.log("hello")
     return (
-      <Text> Overview </Text>
+      <h1> Overview </h1>
     )
   }
 }
-
-export default Overview

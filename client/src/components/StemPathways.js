@@ -1,6 +1,6 @@
 import React, { Component } from "react"; 
 
-class StemPathways extends Component {
+export class StemPathways extends Component {
   constructor () {
     super()
     this.state = {}
@@ -8,9 +8,7 @@ class StemPathways extends Component {
 
   render () {
     return (
-      <Text> Pathways to Stem </Text>
+      <h1> Pathways to Stem </h1>
     )
   }
 }
-
-export default StemPathways
