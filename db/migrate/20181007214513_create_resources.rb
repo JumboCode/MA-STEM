@@ -3,7 +3,7 @@ class CreateResources < ActiveRecord::Migration[5.0]
     create_table :resources do |t|
       t.string :title
       t.string :location
-      t.string :type
+      t.string :resource_type
       t.string :description
       t.string :link
 
