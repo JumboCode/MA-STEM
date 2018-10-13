@@ -1,4 +1,4 @@
-FactoryBot.define do
+FactoryBot.define do # testing pushing
    factory :resource do
      title { Faker::Lorem.word }
      location { Faker::Lorem.word }
