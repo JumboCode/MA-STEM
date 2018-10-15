@@ -1,0 +1,28 @@
+jobs:
+  include:
+    # - stage: deploy backend to production
+    #   deploy:
+    #     provider: heroku
+    #     app: mass-stem-backend
+    #     api_key: f869b27f-7a55-45c5-a235-622ebdc9b1f7
+    # - stage: test backend
+    #   script: 'curl https://mass-stem-backend.herokuapp.com/'
+    
+    # - stage: deploy frontend to production
+    #   language: node_js
+    #   node_js:
+    #     - "stable"
+
+      cache:
+        directories:
+          - client/node_modules
+      script: 
+        - cd client
+        - npm test
+        - npm run build
+      deploy:
+        provider: heroku
+        app: ma-stem-client
+        api_key: f869b27f-7a55-45c5-a235-622ebdc9b1f7
+    - stage: test frontend
+      script: 'curl https://ma-stem-client.herokuapp.com/'
