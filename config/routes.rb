@@ -5,6 +5,5 @@ Rails.application.routes.draw do
   resources :resources
 
   scope '/api' do
-    resources :drinks
   end
 end
