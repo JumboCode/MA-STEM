@@ -43,6 +43,10 @@ group :development do
   gem 'foreman', '~> 0.82.0'
 end
 
+group :assets do
+  gem 'coffee-rails', '~> 4.1.0'
+end
+
 group :test do
   gem 'factory_bot_rails', '~> 4.0'
   gem 'shoulda-matchers', '~> 3.1'
