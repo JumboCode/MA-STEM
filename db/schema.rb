@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 20181011002917) do
   create_table "resources", force: :cascade do |t|
     t.string   "title"
     t.string   "location"
-    t.string   "type"
+    t.string   "r_type"
     t.string   "description"
     t.string   "link"
     t.datetime "created_at",  null: false
