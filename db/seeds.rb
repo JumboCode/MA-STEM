@@ -5,8 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
-
+AdminUser.create!(email: 'admin3@example.com', password: 'password', password_confirmation: 'password')
+=begin 
 negroni = Drink.create(
   title: "Sparkling Negroni",
   description: "The perfect cocktail for sipping after an alfresco dinner on a summer night, Negronis get their red hue and herbaceous beginning from the Italian apéritif Campari, which is mellowed out by floral gin and sweet vermouth. Top off your drink with some bubbly, and enjoy.",
@@ -32,3 +32,10 @@ margarita.ingredients.create(description: "1½ oz. fresh pineapple juice")
 margarita.ingredients.create(description: "½ oz. Grand Marnier or other orange liqueur")
 margarita.ingredients.create(description: "Coarse salt, for rimming glass")
 margarita.ingredients.create(description: "Pineapple wedge and peel, for garnish")
+=end
+sec = Resource.create(
+  title: "SEC",
+  location: "near brom-p",
+  r_type: "academic building",
+  link: "http://www.sec.com",
+)
