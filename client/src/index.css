@@ -1,9 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Caveat+Brush');
+
+#main-btn {
+	font-size: 1.7em;
+	font-family: 'Caveat Brush', cursive;
+	border-radius: 15px;
+	background-color: white;
+	box-shadow: 2px 2px 4px #d1cfcf;
+	width: 31vw;
+	height: 10vh;
+	margin-left: 8vw;
+	margin-top: 50vh;
+	color: black;
+}
+
+#landing-image-1 {
+    background-image: linear-gradient(to bottom, #020240, #040498) !important;
+    background-size: 100% 100% !important;
+
+}
+
+#landing-image-2 {
+	background-image: url("./components/pattern-2.png") !important;
+	background-size: 250px 250px !important;
+	background-repeat: repeat;
+
+}
+
+
+a:link {
+	color: white;
+}
+
+a:visited {
+	color: white;
+}
+
+a:hover {
+	color: white;
+}
+
+a:active {
+	color: white;
+}
+
+#main-btn:hover {
+	background-color: #f5f5f5; 
+}
+#main-btn:active {
+	background-color: #F0F0F0;
+}
+
+#puzzle {
+	width: 2.5vw;
+	margin-left: 10px;
+	display: inline;
+}
+
+#expl {
+	float: right;
+	width: 27vw;
+}
+
+#down-arrow {
+	display: block;
+	margin-top: 25vh;
+	margin-left: 43vw;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  color: white;
+
+}
+
+#bubbles {
+	height: 100vh;
+	margin-top: 30vh;
+	border: 1px solid red; 
 }
 
 #root {
-  padding: 4rem 0;
+  /*padding: 4rem 0;*/
+}
+
+#menu-bar {
+	position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+#ma-stem-txt {
+	padding-top: 3vw;
+}
+
+#menu-icon {
+	margin-top: 2vh;
+	float: right;
+	margin-right: 3vw;
 }
