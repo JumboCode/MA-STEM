@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   resources :resources
+  professionalPaths :professionalPaths
 
   scope '/api' do
   end
