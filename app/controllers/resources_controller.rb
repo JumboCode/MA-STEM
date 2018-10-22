@@ -7,6 +7,9 @@ class ResourcesController < ApplicationController
 	end
 
 
-	
+	def show
+		#@resource = Resource.all.find(params[:id]) # not scalable
+		json_response(@resource)
+	end	
 
 end

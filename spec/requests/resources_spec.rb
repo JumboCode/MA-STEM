@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Resources API', type: :request do
 	# initialize test data
 	let!(:resources) { create_list(:resource, 10) }
-	let(:resource_id) { resources.first_id }
+	let(:resource_id) { resources.first.id }
 
 	# Test suite for GET /resources
 	describe 'GET /resources' do
