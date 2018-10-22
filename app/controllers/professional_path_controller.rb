@@ -1,9 +1,9 @@
 class ProfessionalPathController < ApplicationController
-	before_action :set_professionalPath, only: [:show]
+	before_action :set_ProfessionalPath, only: [:show]
 
 	def index
-		@professionalPaths = ProfessionalPath.all
-		json_response(@professionalPaths)
+		@ProfessionalPaths = ProfessionalPath.all
+		json_response(@ProfessionalPaths)
 	end
 
 

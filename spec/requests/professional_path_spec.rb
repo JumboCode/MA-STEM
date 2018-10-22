@@ -2,15 +2,15 @@ require 'rails_helper'
 
 RSpec.describe 'ProfessionalPath API', type: :request do
 	# initialize test data
-	let!(:professionalPaths) { create_list(:ProfessionalPath, 10) }
-	let(:professionalPath_id) { professionalPaths.first_id }
+	let!(:ProfessionalPaths) { create_list(:ProfessionalPath, 10) }
+	let(:ProfessionalPath_id) { ProfessionalPaths.first_id }
 
 	# Test suite for GET /professionalpath
-	describe 'GET /professionalPaths' do
+	describe 'GET /professionalpaths' do
 		# make an HTTP get request before each example
-		before { get '/professionalPaths'}
+		before { get '/professionalpaths'}
 
-		it 'returns professionalPaths' do
+		it 'returns professionalpaths' do
 			expect(json).not_to be_empty
 			expect(json.size).to eq(10)
 		end
