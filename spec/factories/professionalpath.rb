@@ -1,5 +1,5 @@
 FactoryBot.define do
-	factory :ProfessionalPath do
+	factory :Professionalpath do
 		name {Faker::Lorem.word }
 		title {Faker::Lorem.word }
 		description { Faker::Lorem.word }
