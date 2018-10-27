@@ -19,6 +19,7 @@ jobs:
         #   - client/node_modules
       script: 
         - cd client
+        - npm i
         - npm run build
       deploy:
         provider: heroku
