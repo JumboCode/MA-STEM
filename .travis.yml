@@ -19,7 +19,6 @@ jobs:
         #   - client/node_modules
       script: 
         - cd client
-        - npm test
         - npm run build
       deploy:
         provider: heroku
