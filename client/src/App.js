@@ -33,10 +33,19 @@ class App extends Component {
   //     .then(drink => this.setState({drink: drink}))
   // }
 
+
   render () {
     let {active} = this.state
     return active? (
       <Container text>
+          <Dropdown icon='cocktail' textAlign='right'>
+            <Dropdown.Menu>
+              <Dropdown.Item text='Resources' />
+              <Dropdown.Item text='Admin' />
+              <Dropdown.Item text='About Us' />
+              <Dropdown.Item text='Help' />
+            </Dropdown.Menu>
+          </Dropdown>
           <Header as='h2' icon textAlign='center'>
           <Icon name='cocktail' circular />
           <Header.Content>
