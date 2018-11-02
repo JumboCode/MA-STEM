@@ -1,0 +1,30 @@
+jobs:
+  include:
+    # - stage: deploy backend to production
+    #   deploy:
+    #     provider: heroku
+    #     app: mass-stem-backend
+    #     api_key: IzNW36mBuDaZZijtNqy1OjqOz/YUTJEAmQopVU6u1dRBgHFbXS6rYoDY5FRp4A+r+eFSjzt+jct9V44U78l/GN+UFYZL7NDLassivdPOwHjxWorlObMT3i2h+OI0Vwva3L6xVUmJXYSodJEc8PUMcB9F2CmIuNqn4s4ypiVO7DCULw9og/WodeS1EXIUZFWblPH47NKy5yvDMThW73zmhiWXDAI1LEhSbv53ii/uxWc4G0VWYjvEXUr2DTzD48MJXVA7urczxr9iU5eMZ/D21OBRijVino/wMqVQFiqOpdDduMVgHk/OhQQmzpowF7s6vQACVkBYYK+10fPHnk2h/X+iLhNi3MNDEvJXSIaWug+w/BLr1xStKIeaRlt7DWVgqy6mJEfvABheOAE9+jz/6EbSSixYHHIQWNphmFv2Nzu2BjTIbestwGPb6rIXDp1MnDRtNQb0uKRbdJPlJtvO++Wscxs+qEd7ANbaP0nbET0TMgZkSyF9OO7Bo/OhoKSVN9VVIQjT3iRIYpTseOBs+rEs+B8kp9CKisQGEuRq7Rs8CI56uGH8yYXaEEUjSwKRBmkdZQX4tiodIwuE4tI9tf64TKWlpVtQEY8R6fKjKrTuiG/x4XHDb5Osg0MmZh7XDIN5S5UFiB9CA4e1u09JGnVOfXiP0X0Trca1T/LtTho=
+
+    # - stage: test backend
+    #   script: 'curl https://mass-stem-backend.herokuapp.com/'
+    
+    - stage: deploy frontend to production
+      language: node_js
+      node_js:
+        - "stable"
+
+      cache:
+        directories:
+          - client/node_modules
+      script: 
+        - cd client
+        - npm i
+        - npm run build
+      deploy:
+        provider: heroku
+        app: ma-stem-client
+        api_key: 
+          secure: IzNW36mBuDaZZijtNqy1OjqOz/YUTJEAmQopVU6u1dRBgHFbXS6rYoDY5FRp4A+r+eFSjzt+jct9V44U78l/GN+UFYZL7NDLassivdPOwHjxWorlObMT3i2h+OI0Vwva3L6xVUmJXYSodJEc8PUMcB9F2CmIuNqn4s4ypiVO7DCULw9og/WodeS1EXIUZFWblPH47NKy5yvDMThW73zmhiWXDAI1LEhSbv53ii/uxWc4G0VWYjvEXUr2DTzD48MJXVA7urczxr9iU5eMZ/D21OBRijVino/wMqVQFiqOpdDduMVgHk/OhQQmzpowF7s6vQACVkBYYK+10fPHnk2h/X+iLhNi3MNDEvJXSIaWug+w/BLr1xStKIeaRlt7DWVgqy6mJEfvABheOAE9+jz/6EbSSixYHHIQWNphmFv2Nzu2BjTIbestwGPb6rIXDp1MnDRtNQb0uKRbdJPlJtvO++Wscxs+qEd7ANbaP0nbET0TMgZkSyF9OO7Bo/OhoKSVN9VVIQjT3iRIYpTseOBs+rEs+B8kp9CKisQGEuRq7Rs8CI56uGH8yYXaEEUjSwKRBmkdZQX4tiodIwuE4tI9tf64TKWlpVtQEY8R6fKjKrTuiG/x4XHDb5Osg0MmZh7XDIN5S5UFiB9CA4e1u09JGnVOfXiP0X0Trca1T/LtTho=
+    # - stage: test frontend
+    #   script: 'curl https://ma-stem-client.herokuapp.com/'

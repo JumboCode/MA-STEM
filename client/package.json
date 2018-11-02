@@ -11,13 +11,15 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "^2.0.4",
     "semantic-ui-css": "^2.2.9",
-    "semantic-ui-react": "^0.67.0"
+    "semantic-ui-react": "^0.67.0",
+    "serve": "^10.0.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
+    "start": "serve -s build",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build"
   },
   "browserslist": [
     ">0.2%",
