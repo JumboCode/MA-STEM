@@ -68,7 +68,7 @@ npm i
 ## Rails API: Current Working Routes
 `/resources`: returns JSON data containing all Resource objects in the database. 
 
-`/professionalpaths`: returns JSON data containing all Professionalpath objects in the database.
+`/professionalpaths`: GET request that returns JSON data containing all Professionalpath objects in the database.
 
 Note -- you'll need to seed the database to be able to see these come back! Run `rake db:seed` to seed the database, then `rails server` to start the server. If you hit `localhost:3000/resources` you should see the JSON response!
 
