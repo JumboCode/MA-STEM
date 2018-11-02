@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Container, Header, Segment, Button, Image, Icon, Dimmer, Loader, Divider } from 'semantic-ui-react'
-import { Link, Switch, Route, Router } from "react-router-dom";
+import { Container, Icon } from 'semantic-ui-react'
+import { Switch, Route, Router } from "react-router-dom";
 import { StemPathways } from './StemPathways'
 import { CommunityResources } from './CommunityResources'
 import { StemProfessionals } from './StemProfessionals'
@@ -58,7 +58,7 @@ class App extends Component {
 
           {this.renderHeader()}
           {this.renderPageBody()}
-          <BarChart data={this.state.data} width={this.state.width} height={this.state.height} />
+          {/*<BarChart data={this.state.data} width={this.state.width} height={this.state.height} />*/}
         </div>
       </div>
     )

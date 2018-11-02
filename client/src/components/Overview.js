@@ -1,11 +1,12 @@
 import React, { Component } from "react"; // eslint-disable-line no-unused-vars
-import { Container, Header, Segment, Button, Image, Icon, Dimmer, Loader, Divider } from 'semantic-ui-react'
+import { Button, Image, Icon, } from 'semantic-ui-react'
 import ScrollableAnchor from 'react-scrollable-anchor'
-import BarChart from "./BarChart.js";
+// import BarChart from "./BarChart.js";
 
 export class Overview extends Component {
   constructor () {
     super()
+    this.state = {}
   }
   render () {
     console.log("hello")
