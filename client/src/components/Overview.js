@@ -3,6 +3,8 @@ import React, { Component } from "react"; // eslint-disable-line no-unused-vars
 export class Overview extends Component {
   constructor () {
     super()
+    console.log("overview")
+    this.state = {}
   }
 
   render () {
