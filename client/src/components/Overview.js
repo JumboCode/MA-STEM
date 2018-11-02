@@ -6,6 +6,7 @@ import ScrollableAnchor from 'react-scrollable-anchor'
 export class Overview extends Component {
   constructor () {
     super()
+    console.log("overview")
     this.state = {}
   }
   render () {
