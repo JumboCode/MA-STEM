@@ -8,7 +8,7 @@ export class Overview extends Component {
   }
 
   render () {
-    console.log("hello")
+    console.log("wow")
     return (
       <h1> Overview </h1>
     )

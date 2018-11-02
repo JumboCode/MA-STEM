@@ -5,6 +5,7 @@ import { StemPathways } from './StemPathways'
 import { CommunityResources } from './CommunityResources'
 import { StemProfessionals } from './StemProfessionals'
 import { Overview } from './Overview'
+import { HeaderBar } from './Header'
 import history from "../lib/history";
 
 class App extends Component {
@@ -72,9 +73,9 @@ class App extends Component {
   render () {    
     return (
       <div style={{ backgroundColor: "white" }}>
-        {this.renderHeader()}
-        {this.renderPageBody()}
-        <Overview/>
+        {console.log("yes")}
+        <HeaderBar/>
+        {this.renderPageBody()} 
       </div>
     )
   }
