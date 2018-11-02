@@ -6,6 +6,8 @@ import BarChart from "./BarChart.js";
 export class Overview extends Component {
   constructor () {
     super()
+    console.log("overview")
+    this.state = {}
   }
   render () {
     console.log("hello")
