@@ -1,7 +1,7 @@
 import React, { Component } from "react"; // eslint-disable-line no-unused-vars
 import { Container, Header, Segment, Button, Image, Icon, Dimmer, Loader, Divider } from 'semantic-ui-react'
-import ScrollableAnchor from 'react-scrollable-anchor';
-
+import ScrollableAnchor from 'react-scrollable-anchor'
+import BarChart from "./BarChart.js";
 
 export class Overview extends Component {
   constructor () {
@@ -20,6 +20,9 @@ export class Overview extends Component {
           <div id='bubbles'>
               <ScrollableAnchor id={'bubbles-sec'}>
                 <h1>text</h1>
+                
+                  
+               
               </ScrollableAnchor>
           </div>
       </div>
