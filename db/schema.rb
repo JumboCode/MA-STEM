@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20181011002917) do
     t.index ["drink_id"], name: "index_ingredients_on_drink_id", using: :btree
   end
 
-  create_table "professional_paths", force: :cascade do |t|
+  create_table "professionalpaths", force: :cascade do |t|
     t.string   "name"
     t.string   "title"
     t.string   "description"
