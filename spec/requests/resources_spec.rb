@@ -20,8 +20,8 @@ RSpec.describe 'Resources API', type: :request do
 		end
 	end
 
-  describe 'GET /resource/:id' do
-      before { get "/resource/#{resource_id}" }
+  describe 'GET /resources/:id' do
+      before { get "/resources/#{resource_id}" }
 
       context 'when the record exists' do
       it 'returns the resource' do

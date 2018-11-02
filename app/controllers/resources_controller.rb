@@ -1,5 +1,5 @@
 class ResourcesController < ApplicationController
-	before_action :set_resource, only: [:show]
+	#before_action :set_resource, only: [:show]
 
 	def index
 		@resources = Resource.all
@@ -8,8 +8,12 @@ class ResourcesController < ApplicationController
 
 
 	def show
-		#@resource = Resource.all.find(params[:id]) # not scalable
-		json_response(@resource)
+		@resource = Resource.all.find(params[:id]) # not scalable
+		if not @resource.blank?
+			json_response(@resource)
+		else 
+			raise ActiveRecord::RecordNotFound
+		end
 	end	
 
 end
