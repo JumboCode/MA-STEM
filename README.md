@@ -65,19 +65,35 @@ bin/rails db:migrate RAILS_ENV=development
 brew install node
 npm i
 ```
+## Rails API: Current Working Routes
+`/resources`: returns JSON data containing all Resource objects in the database. 
+
+`/professionalpaths`: returns JSON data containing all Professionalpath objects in the database.
+
+Note -- you'll need to seed the database to be able to see these come back! Run `rake db:seed` to seed the database, then `rails server` to start the server. If you hit `localhost:3000/resources` you should see the JSON response!
+
+## Additional Documentation
+Please visit the [wiki](https://github.com/JumboCode/MA-STEM/wiki) for additional documentation on developing for this project.
+
+## Team Logistics
+MA STEM meets on Thursday evenings 8:00-10:00pm in SEC 120, and Saturday afternoons 2:00-4:00pm in SEC 223. 
 
 ## Project Timeline and Goals
 October 6: have some initial wireframing done, have a solid understanding
 of what the data will look like and how we want to store/model it, every team
 member should have a development ticket  
+
 October 14: complete static site pages/templates, database schema, route to
 return all resources  
+
 November 1: complete the student user UI -- the "build your path to STEM"
 feature should produce a result that the student can view, start thinking
 about admin user interaction  
+
 Thanksgiving: a student user can (easily) build and save their personalized
 path to STEM, an admin user can add new rows to the database and delete old 
 ones. Static/templated pages complete.  
+
 End of semester: application v0: admin user can easily interact with the content
 of the website and update data with as much flexibility as we 
 can reasonably offer, nice user flow through interactive components, clear
