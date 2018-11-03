@@ -4,6 +4,8 @@ jobs:
       language: ruby
       services:
         - postgresql
+      addons:
+        postgresql: "9.6"
       before_script:
         - cp config/database.yml.travis config/database.yml
         - psql -c 'create database travis_ci_test;' -U postgres        
