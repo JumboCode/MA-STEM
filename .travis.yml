@@ -6,7 +6,7 @@ jobs:
         - postgresql
       before_script:
         - cp config/database.yml.travis config/database.yml
-        - psql -c 'create database db/test;' -U postgres
+        - psql -c 'create database travis_ci_test;' -U postgres
       deploy:
         provider: heroku
         app: mass-stem-backend
