@@ -8,12 +8,16 @@ class ResourcesController < ApplicationController
 
 
 	def show
-		@resource = Resource.all.find(params[:id]) # not scalable
+		begin
+			@resource = Resource.find(params[:id]) # not scalable
+		rescue ActiveRecord::RecordNotFound
+			json_response("/Couldn't find Resource/",404);
+		end
+
 		if not @resource.blank?
 			json_response(@resource)
-		else 
-			raise ActiveRecord::RecordNotFound
 		end
-	end	
+
+	end
 
 end

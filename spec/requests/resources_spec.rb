@@ -23,7 +23,7 @@ RSpec.describe 'Resources API', type: :request do
   describe 'GET /resources/:id' do
       before { get "/resources/#{resource_id}" }
 
-      context 'when the record exists' do
+    context 'when the record exists' do
       it 'returns the resource' do
         expect(json).not_to be_empty
           expect(json['id']).to eq(resource_id)
