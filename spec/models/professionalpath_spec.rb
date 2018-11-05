@@ -1,7 +1,7 @@
 require 'rails_helper'
 # require 'spec_helper'
 
-RSpec.describe ProfessionalPath, type: :model do
+RSpec.describe Professionalpath, type: :model do
 	
 	# Validation tests: ensure expected columns are present
 	it { should validate_presence_of(:name) }
