@@ -6,7 +6,6 @@ const src='.../client/public/images/MAStemLogoBIG.png'
 export class HeaderBar extends Component {
   constructor () {
     super()
-    console.log("yo")
   }
 
   render () {
