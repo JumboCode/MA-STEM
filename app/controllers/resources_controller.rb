@@ -7,8 +7,8 @@ class ResourcesController < ApplicationController
 
 
 	def show
-		begin
-			@resource = Resource.find(params[:id]) # not scalable
+		begin		
+			@resource = Resource.find(params[:id])
 		rescue ActiveRecord::RecordNotFound
 			json_response("/Couldn't find Resource/",404);
 		end
@@ -16,7 +16,18 @@ class ResourcesController < ApplicationController
 		if not @resource.blank?
 			json_response(@resource)
 		end
-
 	end
 
+	def showLocation
+		puts "location"
+		begin
+			@resource = Resource.find(params[:location])
+		rescue ActiveRecord::RecordNotFound
+			json_response("/Couldn't find Resource by LOC/",404);
+		end
+
+		if not @resource.blank?
+			json_response(@resource)
+		end	
+	end
 end

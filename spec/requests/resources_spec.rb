@@ -4,7 +4,10 @@ RSpec.describe 'Resources API', type: :request do
 	# initialize test data
 	let!(:resources) { create_list(:resource, 10) }
 	let(:resource_id) { resources.first.id }
-
+	let(:resource_location) { resources.first.location }
+	#TODO puts "resource location is:"
+	#TODO puts resource_location
+	
 	# Test suite for GET /resources
 	describe 'GET /resources' do
 		# make an HTTP get request before each example
@@ -20,8 +23,8 @@ RSpec.describe 'Resources API', type: :request do
 		end
 	end
 
-  describe 'GET /resources/:id' do
-      before { get "/resources/#{resource_id}" }
+  describe 'GET /resources/id/:id' do
+      before { get "/resources/id/#{resource_id}" }
 
     context 'when the record exists' do
       it 'returns the resource' do
@@ -47,8 +50,8 @@ RSpec.describe 'Resources API', type: :request do
     end
   end
 
-  describe 'GET /resources/:location' do
-      before { get "/resources/#{resource_location}" }
+  describe 'GET /resources/location/:location' do
+      before { get "/resources/location/#{resource_location}" }
 
     context 'when the record exists' do
       it 'returns the resource' do
