@@ -4,19 +4,21 @@
   "private": true,
   "proxy": "http://localhost:3001",
   "dependencies": {
+    "d3": "^5.7.0",
     "mime": "^2.3.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.2.2",
     "react-scripts": "^2.0.4",
+    "react-scrollable-anchor": "^0.6.1",
     "semantic-ui-css": "^2.2.9",
     "semantic-ui-react": "^0.67.0",
     "serve": "^10.0.2"
   },
   "scripts": {
     "dev": "react-scripts start",
-    "start": "serve -s build",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm run build"
@@ -26,5 +28,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "svg-inline-loader": "^0.8.0"
+  }
 }

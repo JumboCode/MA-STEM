@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Header, Icon } from 'semantic-ui-react'
+import { Container, Icon } from 'semantic-ui-react'
 import { Switch, Route, Router } from "react-router-dom";
 import { StemPathways } from './StemPathways'
 import { CommunityResources } from './CommunityResources'
@@ -7,6 +7,7 @@ import { StemProfessionals } from './StemProfessionals'
 import { Overview } from './Overview'
 import { HeaderBar } from './Header'
 import history from "../lib/history";
+// import BarChart from "./BarChart.js";
 
 class App extends Component {
   constructor () {
@@ -43,39 +44,23 @@ class App extends Component {
 
   renderHeader() {
     return (
-      <Container text>
-        <Header as='h2' icon textAlign='center'>
-          <Icon name='cocktail' circular />
-          <Header.Content>
-            MA STEM
-          </Header.Content>
-        </Header>
-      </Container>
+        <div id="menu-bar">
+          <h1 id="ma-stem-txt">MA Stem</h1>
+          <Icon name='bars' size='big' id="menu-icon"/>
+        </div>
     )
   }
 
-  /* example API endpoint calls using fetch */
-  // getDrinks () {
-  //   this.fetch('api/drinks')
-  //     .then(drinks => {
-  //       this.setState({drinks: drinks});
-  //     })
-  //     .catch(err => {
-  //       console.log(err); 
-  //     })
-  // }
+  render () {  
 
-  // getDrink (id) {
-  //   this.fetch(`api/drinks/${id}`)
-  //     .then(drink => this.setState({drink: drink}))
-  // }
-
-  render () {    
     return (
-      <div style={{ backgroundColor: "white" }}>
-        {console.log("yes")}
-        <HeaderBar/>
-        {this.renderPageBody()} 
+      <div id="landing-image-1">
+        <div id="landing-image-2">
+
+          <HeaderBar/>
+          {this.renderPageBody()}
+          {/*<BarChart data={this.state.data} width={this.state.width} height={this.state.height} />*/}
+        </div>
       </div>
     )
   }
