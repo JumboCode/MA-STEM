@@ -17,7 +17,8 @@ jobs:
         run:
           - bundle exec rails db:migrate RAILS_ENV=test
           - bundle exec rspec
-          - rake db:schema:load
+          - bin/rails db:environment:set RAILS_ENV=production
+          - rake db:schema:load 
     # - stage: test backend
     #   script: 'curl https://mass-stem-backend.herokuapp.com/'
     
