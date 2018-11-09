@@ -20,4 +20,20 @@ RSpec.describe 'ProfessionalPath API', type: :request do
 		end
 	end
 
+	# Test suite for POST /professionalpaths/create
+	describe 'POST /professionalpaths/create' do
+		before {
+			params = {:name        => 'Tony Monaco',
+			          :title       => 'President at Toofts',
+			          :description => 'I am also a geneticist!',
+			          :contact     => 'Tufts!'}
+
+			post '/professionalpaths/create', params.to_json, format: :json
+		}
+
+		it 'returns status code 200' do
+			expect(response).to have_http_status(200)
+		end
+	end
+
 end
