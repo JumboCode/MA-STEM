@@ -19,11 +19,11 @@ class ResourcesController < ApplicationController
 	end
 
 	def showLocation
-		puts "location"
+		puts params[:location]
 		begin
 			@resource = Resource.find(params[:location])
 		rescue ActiveRecord::RecordNotFound
-			json_response("/Couldn't find Resource by LOC/",404);
+			json_response("/Couldn't find Resource/",404);
 		end
 
 		if not @resource.blank?
