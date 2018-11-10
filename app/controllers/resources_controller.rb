@@ -17,9 +17,19 @@ class ResourcesController < ApplicationController
 	end
 
 	def showLocation
-		@resource = Resource.find_by location: params[:location]
+		@resource = Resource.where(location: params[:location])
 
-		if not @resource.nil?
+		if not @resource.empty?
+			json_response(@resource)
+		else
+			json_response("/Couldn't find Resource/",404);
+		end	
+	end
+	
+	def showr_type
+		@resource = Resource.where(r_type: params[:r_type])
+
+		if not @resource.empty?
 			json_response(@resource)
 		else
 			json_response("/Couldn't find Resource/",404);
