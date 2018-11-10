@@ -24,6 +24,7 @@ jobs:
           - bundle exec rspec
           - bin/rails db:environment:set RAILS_ENV=production
           - rake db:schema:load 
+          
     # - stage: test backend
     #   script: 'curl https://mass-stem-backend.herokuapp.com/'
     
