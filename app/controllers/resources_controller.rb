@@ -7,14 +7,12 @@ class ResourcesController < ApplicationController
 
 
 	def show
-		begin		
-			@resource = Resource.find(params[:id])
-		rescue ActiveRecord::RecordNotFound
-			json_response("/Couldn't find Resource/",404);
-		end
+		@resource = Resource.find_by id: params[:id]
 
 		if not @resource.blank?
 			json_response(@resource)
+		else
+			json_response("/Couldn't find Resource/",404);
 		end
 	end
 
