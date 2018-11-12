@@ -82,9 +82,9 @@ RSpec.describe 'Resources API', type: :request do
 
     context 'when the record exists' do
       it 'returns the resource' do
-	expect(json).not_to be_empty
-        # returns a list of jsons!  We only check the first one
-	expect(json[0]['r_type']).to eq(resource_r_type)
+	        expect(json).not_to be_empty
+          # returns a list of jsons!  We only check the first one
+	        expect(json[0]['r_type']).to eq(resource_r_type)
       end
 
       it 'returns status code 200' do
@@ -105,6 +105,47 @@ RSpec.describe 'Resources API', type: :request do
     end
   end
 
+   # Test suite for POST /todos
+  describe 'POST /resources/new' do
+    # valid payload
+    let(:valid_attributes) { { 
+      
+      title: 'test_title',
+      location: 'test_local',
+      description: 'test_descript',
+      r_type: 'test_rtype',
+      link: 'test_link'
+      } }
+
+    context 'when the request is valid' do
+      before { post '/resources/new', params: valid_attributes }
+
+      it 'creates a resource' do
+        expect(json['title']).to eq('test_title')
+        expect(json['location']).to eq('test_local')
+        expect(json['description']).to eq('test_descript')
+        expect(json['r_type']).to eq('test_rtype')
+        expect(json['link']).to eq('test_link')
+      end
+
+      it 'returns status code 201' do
+        expect(response).to have_http_status(201)
+      end
+    end
+
+    context 'when the request is invalid' do
+      before { post '/resources/new', params: { title: 'Foobar' } }
+
+      it 'returns status code 422' do
+        expect(response).to have_http_status(422)
+      end
+
+      it 'returns a validation failure message' do
+        expect(response.body)
+          .to match(/Validation failed: Attributes can't be blank/)
+      end
+    end
+  end
 
 
 end

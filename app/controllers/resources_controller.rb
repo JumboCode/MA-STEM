@@ -12,7 +12,7 @@ class ResourcesController < ApplicationController
 		if not @resource.blank?
 			json_response(@resource)
 		else
-			json_response("/Couldn't find Resource/",404);
+			json_response("/Couldn't find Resource a/",404);
 		end
 	end
 
@@ -22,7 +22,7 @@ class ResourcesController < ApplicationController
 		if not @resource.empty?
 			json_response(@resource)
 		else
-			json_response("/Couldn't find Resource/",404);
+			json_response("/Couldn't find Resource b/",404);
 		end	
 	end
 	
@@ -32,7 +32,26 @@ class ResourcesController < ApplicationController
 		if not @resource.empty?
 			json_response(@resource)
 		else
-			json_response("/Couldn't find Resource/",404);
+			json_response("/Couldn't find Resource c/",404);
 		end	
+	end
+
+	def create
+		@resource = Resource.new
+
+		@resource.title = params[:title]
+		@resource.description = params[:description]
+		@resource.r_type = params[:r_type]
+		@resource.location = params[:location]
+		@resource.link = params[:link]
+
+		begin
+			@resource.save!
+			json_response(@resource, :created)
+		rescue ActiveRecord::RecordInvalid => invalid
+			json_response("/Validation failed: Attributes can't be blank/", 422)
+		end
+		
+			
 	end
 end

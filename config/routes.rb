@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 	get '/resources/location/:location', to: 'resources#showLocation'	
 	get '/resources/id/:id', to: 'resources#show'
 	get '/resources/rtype/:r_type', to: 'resources#showr_type'
+
+  post '/resources', to: 'resources#create'
 	# get "/404" => "errors#not_found"
 	# get "/500" => "errors#exception"
 
