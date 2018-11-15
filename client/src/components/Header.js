@@ -1,35 +1,32 @@
 import React, { Component } from "react"; // eslint-disable-line no-unused-vars
-import { Container, Divider, Dropdown, Image, Header } from 'semantic-ui-react'
+import { Dropdown } from 'semantic-ui-react';
+import { BrowserRouter as Link } from "react-router-dom";
+import logo from "../images/MAStemLogoBIG.png";
 
-import logo from "../images/MAStemLogoBIG.png"
+// export const history = createHashHistory()
 
 export class HeaderBar extends Component {
   constructor () {
     super()
+    this.state = {}
   }
 
   render () {
-    
-    
     return (
       <div style={{ display:"flex", width: "400", paddingTop:"10", paddingLeft:"30"}}>
-        <div>
           <h1>
             <img src={logo} alt="Logo" width={250} />
           </h1>
-        </div>
-        <div>
-          <h1 style={{align: "right", paddingTop:"50", paddingLeft: "850"}}>
-            <Dropdown icon="sidebar" display="inline-block">
+          <h1 style={{align: "right", paddingTop:"25", paddingLeft: "850"}}>
+            <Dropdown icon="sidebar">
               <Dropdown.Menu>
-                <Dropdown.Item text="Resources" />
-                <Dropdown.Item text="Admin" />
-                <Dropdown.Item text="About Us" />
-                <Dropdown.Item text="Help" />
+                <Dropdown.Item as={Link} to='/resources' text="Resources" />
+                <Dropdown.Item as={Link} to='/admin' text="Admin" />
+                <Dropdown.Item as={Link} to='/aboutus' text="About Us" />
+                <Dropdown.Item as={Link} to='/help' text="Help" />
               </Dropdown.Menu>
-            </Dropdown> 
+            </Dropdown>
           </h1>
-        </div>  
       </div>
     )
   }
