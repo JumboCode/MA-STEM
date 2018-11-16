@@ -5,6 +5,7 @@ import { StemPathways } from './StemPathways'
 import { CommunityResources } from './CommunityResources'
 import { StemProfessionals } from './StemProfessionals'
 import { Overview } from './Overview'
+import { HeaderBar } from './Header'
 import history from "../lib/history";
 // import BarChart from "./BarChart.js";
 
@@ -56,7 +57,7 @@ class App extends Component {
       <div id="landing-image-1">
         <div id="landing-image-2">
 
-          {this.renderHeader()}
+          <HeaderBar/>
           {this.renderPageBody()}
           {/*<BarChart data={this.state.data} width={this.state.width} height={this.state.height} />*/}
         </div>
