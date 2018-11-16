@@ -12,7 +12,7 @@ class ResourcesController < ApplicationController
 		if not @resource.blank?
 			json_response(@resource)
 		else
-			json_response("/Couldn't find Resource a/",404);
+			json_response("/Couldn't find Resource/",404);
 		end
 	end
 
@@ -22,7 +22,7 @@ class ResourcesController < ApplicationController
 		if not @resource.empty?
 			json_response(@resource)
 		else
-			json_response("/Couldn't find Resource b/",404);
+			json_response("/Couldn't find Resource/",404);
 		end	
 	end
 	
@@ -32,7 +32,7 @@ class ResourcesController < ApplicationController
 		if not @resource.empty?
 			json_response(@resource)
 		else
-			json_response("/Couldn't find Resource c/",404);
+			json_response("/Couldn't find Resource/",404);
 		end	
 	end
 
@@ -50,8 +50,25 @@ class ResourcesController < ApplicationController
 			json_response(@resource, :created)
 		rescue ActiveRecord::RecordInvalid => invalid
 			json_response("/Validation failed: Attributes can't be blank/", 422)
-		end
-		
-			
+		end		
 	end
+
+	def update
+		@resource = Resource.where(id: params[:id])
+
+		if not @resource.empty?
+
+			@resource.update(
+				title: params[:title], 
+				description: params[:description], 
+				r_type: params[:r_type], 
+				location: params[:location],
+				link: params[:link])
+			json_response('',204)
+		else
+			json_response("/Couldn't find Resource/",404);
+		end
+	end
+
+
 end
