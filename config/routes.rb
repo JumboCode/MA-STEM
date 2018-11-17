@@ -8,8 +8,10 @@ Rails.application.routes.draw do
 	# get "/500" => "errors#exception"
 
 
-  get  '/professionalpaths', to: 'professionalpaths#index'
+  get  '/professionalpaths',        to: 'professionalpaths#index'
   post '/professionalpaths/create', to: 'professionalpaths#new'
+  post '/professionalpaths/delete', to: 'professionalpaths#destroy'
+  post '/professionalpaths/update', to: 'professionalpaths#update'
 
   scope '/api' do
 
