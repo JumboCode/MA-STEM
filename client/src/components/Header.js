@@ -1,15 +1,20 @@
-import React, { Component } from "react"; // eslint-disable-line no-unused-vars
+import React, { Component } from "react";
 import { Dropdown } from 'semantic-ui-react';
-import { BrowserRouter as Link } from "react-router-dom";
+import {browserHistory} from 'react-router';
 import logo from "../images/MAStemLogoBIG.png";
-
-// export const history = createHashHistory()
 
 export class HeaderBar extends Component {
   constructor () {
     super()
     this.state = {}
   }
+
+  redirect(to) {
+    browserHistory.push({
+       pathname: to
+       
+    });
+  } 
 
   render () {
     return (
@@ -20,10 +25,10 @@ export class HeaderBar extends Component {
           <h1 style={{align: "right", paddingTop:"25", paddingLeft: "850"}}>
             <Dropdown icon="sidebar">
               <Dropdown.Menu>
-                <Dropdown.Item as={Link} to='/resources' text="Resources" />
-                <Dropdown.Item as={Link} to='/admin' text="Admin" />
-                <Dropdown.Item as={Link} to='/aboutus' text="About Us" />
-                <Dropdown.Item as={Link} to='/help' text="Help" />
+                <Dropdown.Item text="Resources" onClick={this.redirect('/resources')} />
+                <Dropdown.Item text="Admin" onClick={this.redirect('/admin')} />
+                <Dropdown.Item text="About Us" onClick={this.redirect('/aboutus')} />
+                <Dropdown.Item text="Help" onClick={this.redirect('/help')} />
               </Dropdown.Menu>
             </Dropdown>
           </h1>
