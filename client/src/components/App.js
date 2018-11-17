@@ -31,12 +31,15 @@ class App extends Component {
     return (
       <Container style={{ minHeight: "100vh" }}>
         <Router history={history}>
-            <Switch>
-              <Route path="/resources" exact component={CommunityResources} />
-              <Route path="/professionals" exact component={StemProfessionals} />
-              <Route path="/pathways" exact component={StemPathways} />
-              <Route path="/" component={Overview} />
-            </Switch>
+            <div>
+              <HeaderBar />
+              <Switch>
+                <Route path="/resources" exact component={CommunityResources} />
+                <Route path="/professionals" exact component={StemProfessionals} />
+                <Route path="/pathways" exact component={StemPathways} />
+                <Route path="/" component={Overview} />
+              </Switch>
+            </div>
           </Router>
       </Container>
     );
@@ -56,8 +59,6 @@ class App extends Component {
     return (
       <div id="landing-image-1">
         <div id="landing-image-2">
-
-          <HeaderBar/>
           {this.renderPageBody()}
           {/*<BarChart data={this.state.data} width={this.state.width} height={this.state.height} />*/}
         </div>

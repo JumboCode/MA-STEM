@@ -1,6 +1,6 @@
 import React, { Component } from "react"; // eslint-disable-line no-unused-vars
 import { Dropdown } from 'semantic-ui-react';
-import { BrowserRouter as Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../images/MAStemLogoBIG.png";
 
 // export const history = createHashHistory()
@@ -13,11 +13,11 @@ export class HeaderBar extends Component {
 
   render () {
     return (
-      <div style={{ display:"flex", width: "400", paddingTop:"10", paddingLeft:"30"}}>
+      <div style={{ display:"flex", width: "400px", paddingTop:"10px", paddingLeft:"30px"}}>
           <h1>
             <img src={logo} alt="Logo" width={250} />
           </h1>
-          <h1 style={{align: "right", paddingTop:"25", paddingLeft: "850"}}>
+          <h1 style={{align: "right", paddingTop:"25px", paddingLeft: "850px"}}>
             <Dropdown icon="sidebar">
               <Dropdown.Menu>
                 <Dropdown.Item as={Link} to='/resources' text="Resources" />
