@@ -54,18 +54,19 @@ class ResourcesController < ApplicationController
 	end
 
 	def update
-		@resource = Resource.where(id: params[:id])
 
-		if not @resource.empty?
+		begin
+		@resource = Resource.find(params[:id])
 
-			@resource.update(
-				title: params[:title], 
-				description: params[:description], 
-				r_type: params[:r_type], 
-				location: params[:location],
-				link: params[:link])
-			json_response('',204)
-		else
+
+		@resource.update_attributes(params.permit(:title,
+																:description,
+																:r_type,
+																:location,
+																:link ))
+		@resource.save!
+		json_response('',204);
+		rescue ActiveRecord::RecordNotFound
 			json_response("/Couldn't find Resource/",404);
 		end
 	end

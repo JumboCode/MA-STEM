@@ -150,7 +150,6 @@ RSpec.describe 'Resources API', type: :request do
 
   describe 'PATCH /resources/id/:id' do
     let(:valid_attributes) { { title: 'Test PATCH' } }
-
     context 'when the record exists' do
       before { patch "/resources/id/#{resource_id}", params: valid_attributes }
 
