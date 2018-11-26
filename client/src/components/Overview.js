@@ -10,7 +10,7 @@ export class Overview extends Component {
     this.state = {}
   }
   render () {
-    console.log("hello")
+    console.log("wow")
     return (
     	<div>
       	<Button size='medium' id='main-btn'>

@@ -2,7 +2,7 @@
   "name": "ma-stem-client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001",
+  "homepage": ".",
   "dependencies": {
     "d3": "^5.7.0",
     "mime": "^2.3.1",
