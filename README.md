@@ -70,6 +70,19 @@ npm i
 
 `/professionalpaths`: GET request that returns JSON data containing all Professionalpath objects in the database.
 
+	`/professionalpaths/create`: POST request that creates a new entry in the database. Takes four parameters,
+	all of which are mandatory to create the entry: "name", "title", "description", and "contact". Returns
+	status code 200 if successful.
+
+	`/professionalpaths/delete`: POST request that deletes an entry from the database. Takes one mandatory 
+	parameter: "id", which is the id of the database entry to be deleted. Returns status code 200 if 
+	successful or 404 if the entry with the given id is not found.
+
+	`/professionalpaths/update`: POST request that updates an entry in the database. It takes one mandatory
+	parameter, "id", which is the id of the database entry to be updated, and four optional parameters,
+	"name", "title", "description", and "contact", which, if given, will update their respective fields
+	in the entry. Returns status code 200 if successful or 404 if the entry with the given id is not found.
+
 Note -- you'll need to seed the database to be able to see these come back! Run `rake db:seed` to seed the database, then `rails server` to start the server. If you hit `localhost:3000/resources` you should see the JSON response!
 
 ## Additional Documentation
