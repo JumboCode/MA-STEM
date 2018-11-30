@@ -3,6 +3,6 @@ class Career < ApplicationRecord
 	text       :strengths
 	text       :generic
 	text       :description
-	has_many   :interests
+	has_many_and_belongs_to   :interests
 	belongs_to :field
 end
