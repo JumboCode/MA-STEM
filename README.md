@@ -66,7 +66,19 @@ brew install node
 npm i
 ```
 ## Rails API: Current Working Routes
-`/resources`: returns JSON data containing all Resource objects in the database. 
+`GET /resources`: returns JSON data containing all Resource objects in the database. 
+
+`GET /resources/r_type/:r_type`: returns JSON data containing Resource object with given r_type.
+
+`GET /resources/id/:id`: returns JSON data containing Resource object with given id.
+
+`GET /resources/location/:location`: returns JSON data containing Resource object with given location.
+
+`POST /resources`: creates new resource record
+
+	- To create a post request type into console with rails server running:
+	curl -v -H "Accept: application/json" -H "Content-type: application/json" -X POST -d ' {"title":"a","location":"b","link":"c","r_type":"d","description":"e"}'  http://localhost:3000/resources
+
 
 `/professionalpaths`: GET request that returns JSON data containing all Professionalpath objects in the database.
 
