@@ -19,7 +19,7 @@
   "scripts": {
     "dev": "react-scripts start",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "REACT_APP_ENV=production react-scripts build",
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm run build"
   },
