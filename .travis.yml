@@ -31,6 +31,8 @@ jobs:
       language: node_js
       node_js:
         - "stable"
+      env:
+        - NODE_ENV=production
 
       cache:
         directories:
@@ -38,7 +40,7 @@ jobs:
       script: 
         - cd client
         - npm i
-        - NODE_ENV=production npm run build
+        - npm run build
       deploy:
         provider: heroku
         app: ma-stem-client
