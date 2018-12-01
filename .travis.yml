@@ -40,7 +40,7 @@ jobs:
       script: 
         - cd client
         - npm i
-        - npm run build
+        # - npm run build # pretty sure heroku-postbuild calls build in package.json
       deploy:
         provider: heroku
         app: ma-stem-client
