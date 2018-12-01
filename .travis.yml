@@ -38,7 +38,7 @@ jobs:
       script: 
         - cd client
         - npm i
-        - npm run build
+        - NODE_ENV=production npm run build
       deploy:
         provider: heroku
         app: ma-stem-client
