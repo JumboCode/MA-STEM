@@ -6,7 +6,6 @@ import { CommunityResources } from './CommunityResources'
 import { StemProfessionals } from './StemProfessionals'
 import { Overview } from './Overview'
 import history from "../lib/history";
-// import BarChart from "./BarChart.js";
 
 class App extends Component {
   constructor () {
@@ -58,7 +57,6 @@ class App extends Component {
 
           {this.renderHeader()}
           {this.renderPageBody()}
-          {/*<BarChart data={this.state.data} width={this.state.width} height={this.state.height} />*/}
         </div>
       </div>
     )
