@@ -2,7 +2,7 @@ const url = (process.env.NODE_ENV === 'development')
 ? 'http://localhost:3001/'
 : 'https://mass-stem-backend.herokuapp.com/';
 
-console.log(process.env.NODE_ENV);
+// console.log(process.env.NODE_ENV);
 
 export const options = {
     get: {
