@@ -87,9 +87,6 @@ Note -- you'll need to seed the database to be able to see these come back! Run 
 ## Additional Documentation
 Please visit the [wiki](https://github.com/JumboCode/MA-STEM/wiki) for additional documentation on developing for this project.
 
-## Team Logistics
-MA STEM meets on Thursday evenings 8:00-10:00pm in SEC 120, and Saturday afternoons 2:00-4:00pm in SEC 223. 
-
 ## Project Timeline and Goals
 October 6: have some initial wireframing done, have a solid understanding
 of what the data will look like and how we want to store/model it, every team
