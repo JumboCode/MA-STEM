@@ -7,14 +7,12 @@ const url = (process.env.NODE_ENV === 'development')
 export const options = {
     get: {
         method: 'GET',
-        mode: "no-cors",
         headers: {
             'content-type': 'application/json'
         }
     },
     post: {
         method: 'POST',
-        mode: "no-cors",
         headers: {
             'content-type': 'application/json'
         }

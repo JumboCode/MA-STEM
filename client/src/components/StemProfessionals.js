@@ -8,7 +8,8 @@ export class StemProfessionals extends Component {
     }
 
     componentDidMount() {
-        fetch(api.url + 'resources', api.options.get)
+        console.log("Get request to: ", api.url + 'resources/')
+        fetch(api.url + 'resources/', api.options.get)
             .then(res => {
                 console.log(res)
             }).catch(err => {
