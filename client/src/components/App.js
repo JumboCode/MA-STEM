@@ -55,7 +55,6 @@ class App extends Component {
   }
 
   render () {  
-
     return (
       <div id="landing-image-1">
         <div id="landing-image-2">
