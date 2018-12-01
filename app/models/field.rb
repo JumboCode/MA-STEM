@@ -1,5 +1,5 @@
 class Field < ApplicationRecord
-	string :name
+	String :name
 	has_many :careers
 	has_many :resources
 end
