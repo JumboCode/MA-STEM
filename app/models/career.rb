@@ -1,5 +1,5 @@
 class Career < ApplicationRecord
-	string     :name
+	String     :name
 	text       :strengths
 	text       :generic
 	text       :description
