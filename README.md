@@ -66,15 +66,26 @@ brew install node
 npm i
 ```
 ## Rails API: Current Working Routes
-`/resources`: returns JSON data containing all Resource objects in the database. 
+`GET /resources`: returns JSON data containing all Resource objects in the database. 
+
+`GET /resources/r_type/:r_type`: returns JSON data containing Resource object with given r_type.
+
+`GET /resources/id/:id`: returns JSON data containing Resource object with given id.
+
+`GET /resources/location/:location`: returns JSON data containing Resource object with given location.
+
+`POST /resources`: creates new resource record
+
+	- To create a post request type into console with rails server running:
+	curl -v -H "Accept: application/json" -H "Content-type: application/json" -X POST -d ' {"title":"a","location":"b","link":"c","r_type":"d","description":"e"}'  http://localhost:3000/resources
+
+
+`/professionalpaths`: GET request that returns JSON data containing all Professionalpath objects in the database.
 
 Note -- you'll need to seed the database to be able to see these come back! Run `rake db:seed` to seed the database, then `rails server` to start the server. If you hit `localhost:3000/resources` you should see the JSON response!
 
 ## Additional Documentation
 Please visit the [wiki](https://github.com/JumboCode/MA-STEM/wiki) for additional documentation on developing for this project.
-
-## Team Logistics
-MA STEM meets on Thursday evenings 8:00-10:00pm in SEC 120, and Saturday afternoons 2:00-4:00pm in SEC 223. 
 
 ## Project Timeline and Goals
 October 6: have some initial wireframing done, have a solid understanding
@@ -96,3 +107,6 @@ End of semester: application v0: admin user can easily interact with the content
 of the website and update data with as much flexibility as we 
 can reasonably offer, nice user flow through interactive components, clear
 interactions, application displays all information requested by client.  
+
+
+Hello!

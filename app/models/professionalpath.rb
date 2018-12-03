@@ -1,4 +1,4 @@
-class ProfessionalPath < ApplicationRecord
+class Professionalpath < ApplicationRecord
 	
 	# validations: a resource is required to have
 	# the following fields present
