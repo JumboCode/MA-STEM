@@ -1,7 +1,21 @@
 import React, { Component } from "react";
 import { Dropdown } from 'semantic-ui-react';
 import {browserHistory} from 'react-router';
-import logo from "../images/MAStemLogoBIG.png";
+//import styles from './styles.css';
+
+const logoStyle = {
+  width: "20vw",
+  marginLeft: "10px",
+  display: "inline",
+};
+
+const DropdownStyle = {
+  width: "2.5vw",
+  marginTop: "1vw",
+  marginRight: "10vw",
+  display: "inline",
+  float: "right"
+};  
 
 export class HeaderBar extends Component {
   constructor () {
@@ -14,16 +28,16 @@ export class HeaderBar extends Component {
        pathname: to
        
     });
-  } 
+  }
 
   render () {
     return (
-      <div style={{ display:"flex", width: "400", paddingTop:"10", paddingLeft:"30"}}>
+      
+
+      <div>
           <h1>
-            <img src={logo} alt="Logo" width={250} />
-          </h1>
-          <h1 style={{align: "right", paddingTop:"25", paddingLeft: "850"}}>
-            <Dropdown icon="sidebar">
+            <img id='logo' alt='logo' src={require("../images/MAStemLogoBIG.png")} style={logoStyle} />
+            <Dropdown id='dropdown' icon="sidebar" style={DropdownStyle}>
               <Dropdown.Menu>
                 <Dropdown.Item text="Resources" onClick={this.redirect('/resources')} />
                 <Dropdown.Item text="Admin" onClick={this.redirect('/admin')} />
