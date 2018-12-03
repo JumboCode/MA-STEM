@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Dropdown } from 'semantic-ui-react';
 import {browserHistory} from 'react-router';
-//import styles from './styles.css';
 
 const logoStyle = {
   width: "20vw",
