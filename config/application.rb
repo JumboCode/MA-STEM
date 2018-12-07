@@ -16,6 +16,8 @@ require "rails/test_unit/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+
+
 module ListOfIngredients
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -32,5 +34,12 @@ module ListOfIngredients
     config.middleware.use ActionDispatch::Flash
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
-  end
+    config.middleware.insert_before 0, Rack::Cors do
+        allow do
+	   origins '*'
+	       resource '*', :headers => :any, :methods => [:get, :post, :options]
+	   end
+	end
+    end
 end
+
