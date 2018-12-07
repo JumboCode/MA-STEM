@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from "react"; // eslint-disable-line no-unused-vars
 import { Dropdown } from 'semantic-ui-react';
-import {browserHistory} from 'react-router';
+import { Link } from "react-router-dom";
 
 const logoStyle = {
   width: "20vw",
@@ -22,13 +22,6 @@ export class HeaderBar extends Component {
     this.state = {}
   }
 
-  redirect(to) {
-    browserHistory.push({
-       pathname: to
-       
-    });
-  }
-
   render () {
     return (
       
@@ -38,10 +31,10 @@ export class HeaderBar extends Component {
             <img id='logo' alt='logo' src={require("../images/MAStemLogoBIG.png")} style={logoStyle} />
             <Dropdown id='dropdown' icon="sidebar" style={DropdownStyle}>
               <Dropdown.Menu>
-                <Dropdown.Item text="Resources" onClick={this.redirect('/resources')} />
-                <Dropdown.Item text="Admin" onClick={this.redirect('/admin')} />
-                <Dropdown.Item text="About Us" onClick={this.redirect('/aboutus')} />
-                <Dropdown.Item text="Help" onClick={this.redirect('/help')} />
+                <Dropdown.Item as={Link} to='/resources' text="Resources" />
+                <Dropdown.Item as={Link} to='/admin' text="Admin" />
+                <Dropdown.Item as={Link} to='/aboutus' text="About Us" />
+                <Dropdown.Item as={Link} to='/help' text="Help" />
               </Dropdown.Menu>
             </Dropdown>
           </h1>
