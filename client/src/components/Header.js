@@ -1,9 +1,20 @@
-import React, { Component } from "react"; // eslint-disable-line no-unused-vars
+import React, { Component } from "react";
 import { Dropdown } from 'semantic-ui-react';
-import { Link } from "react-router-dom";
-import logo from "../images/MAStemLogoBIG.png";
+import {browserHistory} from 'react-router';
 
-// export const history = createHashHistory()
+const logoStyle = {
+  width: "20vw",
+  marginLeft: "10px",
+  display: "inline",
+};
+
+const DropdownStyle = {
+  width: "2.5vw",
+  marginTop: "1vw",
+  marginRight: "10vw",
+  display: "inline",
+  float: "right"
+};  
 
 export class HeaderBar extends Component {
   constructor () {
@@ -11,19 +22,26 @@ export class HeaderBar extends Component {
     this.state = {}
   }
 
+  redirect(to) {
+    browserHistory.push({
+       pathname: to
+       
+    });
+  }
+
   render () {
     return (
-      <div style={{ display:"flex", width: "400px", paddingTop:"10px", paddingLeft:"30px"}}>
+      
+
+      <div>
           <h1>
-            <img src={logo} alt="Logo" width={250} />
-          </h1>
-          <h1 style={{align: "right", paddingTop:"25px", paddingLeft: "850px"}}>
-            <Dropdown icon="sidebar">
+            <img id='logo' alt='logo' src={require("../images/MAStemLogoBIG.png")} style={logoStyle} />
+            <Dropdown id='dropdown' icon="sidebar" style={DropdownStyle}>
               <Dropdown.Menu>
-                <Dropdown.Item as={Link} to='/resources' text="Resources" />
-                <Dropdown.Item as={Link} to='/admin' text="Admin" />
-                <Dropdown.Item as={Link} to='/aboutus' text="About Us" />
-                <Dropdown.Item as={Link} to='/help' text="Help" />
+                <Dropdown.Item text="Resources" onClick={this.redirect('/resources')} />
+                <Dropdown.Item text="Admin" onClick={this.redirect('/admin')} />
+                <Dropdown.Item text="About Us" onClick={this.redirect('/aboutus')} />
+                <Dropdown.Item text="Help" onClick={this.redirect('/help')} />
               </Dropdown.Menu>
             </Dropdown>
           </h1>
