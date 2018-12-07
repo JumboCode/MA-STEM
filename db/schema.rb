@@ -47,8 +47,13 @@ ActiveRecord::Schema.define(version: 20181201195518) do
   end
 
   create_table "careers", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.text     "strengths"
+    t.text     "generic"
+    t.text     "description"
+    t.integer  "field_id",    null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "careers_interests", id: false, force: :cascade do |t|
