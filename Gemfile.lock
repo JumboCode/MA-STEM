@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/activeadmin/activeadmin.git
-  revision: 64b30319e72573a20a283a80a43ee30bbaaef817
+  revision: 4831b735213c913ed0e2c21dcc84ad003f1437c7
   specs:
     activeadmin (2.0.0.alpha)
       arbre (>= 1.1.1)
@@ -27,7 +27,7 @@ GIT
 
 GIT
   remote: https://github.com/plataformatec/devise
-  revision: d1571627b78399b55b76c400a78c4a3f367dad2c
+  revision: cb663e96a370ba5d3dc6aa8ea3a2683268e980a0
   specs:
     devise (4.5.0)
       bcrypt (~> 3.0)
@@ -180,7 +180,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (12.3.1)
-    ransack (2.1.0)
+    ransack (2.1.1)
       actionpack (>= 5.0)
       activerecord (>= 5.0)
       activesupport (>= 5.0)
