@@ -1,5 +1,5 @@
 FactoryBot.define do
-	factory :Career do
+	factory :career do
 		name {Faker::Lorem.word }
 		strengths {Faker::Lorem.word }
 		generic { Faker::Lorem.word }

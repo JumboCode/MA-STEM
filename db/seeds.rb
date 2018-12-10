@@ -40,6 +40,8 @@ sec = Resource.create(
   link: "http://www.sec.com",
 )
 
+
+
 path = Professionalpath.create(
   name: "Mark Zuckerberg",
   title: "CEO",

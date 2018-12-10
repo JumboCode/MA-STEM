@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-      	resources :resources
+  resources :resources
 	
 	get '/resources/location/:location', to: 'resources#showLocation'	
 	get '/resources/id/:id', to: 'resources#show'
@@ -13,8 +13,16 @@ Rails.application.routes.draw do
 	# get "/404" => "errors#not_found"
 	# get "/500" => "errors#exception"
 
+  resources :careers
+  get '/careers/id/:id', to: 'careers#show'
+
+  post '/careers/new', to: 'careers#new'
+
+  patch '/careers/id/:id', to: 'careers#update'
+
 
   resources :professionalpaths
+
 
   scope '/api' do
 
