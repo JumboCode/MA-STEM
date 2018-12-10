@@ -16,6 +16,16 @@ class CareersController < ApplicationController
 		end
 	end
 
+	def showByInterest
+		@career_ids = Career.includes(:interests).where(interests: {id: params[:id]})
+
+		if not @career_ids.blank?
+			json_response(@career_ids)
+		else
+			json_response("/Couldn't find any careers/", 404);
+		end
+	end
+
 	def new
 		# params.require([:name,:strengths,:generic])
 

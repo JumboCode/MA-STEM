@@ -4,6 +4,8 @@ RSpec.describe 'Careers API', type: :request do
 
 	let!(:careers) { create_list(:career, 10) }
 	let(:career_id) { careers.first.id }
+  let!(:interests) { create_list(:interest, 10) }
+  let(:interest_id) { interests.first.id }
 
 
 	# Test suite for GET /careers
@@ -51,6 +53,34 @@ RSpec.describe 'Careers API', type: :request do
 			end
 		end
 	end
+
+  # Test suite for GET /careers/interestid/:id
+  describe 'GET /careers/interestid/:id' do
+    # make an HTTP get request before each example
+    before { get "/careers/interestid/#{interest_id}"}
+
+    context 'when the record exists' do
+      it 'returns the careers' do
+        expect(json).not_to be_empty
+      end
+
+      it 'returns status code 200' do
+        expect(response).to have_http_status(200)
+      end
+    end
+
+    context 'when the record does not exist' do
+      let(:interest_id) { 100 }
+
+      it 'returns status code 404' do
+        expect(response).to have_http_status(404)
+      end
+
+      it 'returns a not found message' do
+        expect(response.body).to match(/Couldn't find any careers/)
+      end
+    end
+  end
 
 	describe 'POST /careers/new' do
     # valid payload

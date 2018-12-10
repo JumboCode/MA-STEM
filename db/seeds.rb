@@ -40,11 +40,24 @@ sec = Resource.create(
   link: "http://www.sec.com",
 )
 
-
-
 path = Professionalpath.create(
   name: "Mark Zuckerberg",
   title: "CEO",
   description: "I started Facebook",
   contact: "Find me on Facebook",
 )
+
+career = Career.create(
+        name: "Scientist",
+        strengths: "N/A",
+        generic: "N/A",
+        description: "Does science",
+)
+
+interest = Interest.create(
+        name: "Experiments"
+)
+
+career.interests << interest
+
+

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   resources :careers
   get '/careers/id/:id', to: 'careers#show'
+  get '/careers/interestid/:id', to: 'careers#showByInterest'
 
   post '/careers/new', to: 'careers#new'
 
