@@ -31,10 +31,11 @@ export class HeaderBar extends Component {
             <img id='logo' alt='logo' src={require("../images/MAStemLogoBIG.png")} style={logoStyle} />
             <Dropdown id='dropdown' icon="sidebar" style={DropdownStyle}>
               <Dropdown.Menu>
-                <Dropdown.Item as={Link} to='/resources' text="Resources" />
-                <Dropdown.Item as={Link} to='/admin' text="Admin" />
-                <Dropdown.Item as={Link} to='/professionals' text="TestingTestimonials" />
-                <Dropdown.Item as={Link} to='/help' text="Help" />
+                  <Dropdown.Item as={Link} to='/resources' text="Resources" />
+                  <Dropdown.Item as={Link} to='/admin' text="Admin" />
+                  <Dropdown.Item as={Link} to='/professionals' text="TestingTestimonials" />
+                  <Dropdown.Item as={Link} to='/help' text="Help" />
+                </Dropdown.Menu>
             </Dropdown>
           </h1>
       </div>
