@@ -33,9 +33,8 @@ export class HeaderBar extends Component {
               <Dropdown.Menu>
                 <Dropdown.Item as={Link} to='/resources' text="Resources" />
                 <Dropdown.Item as={Link} to='/admin' text="Admin" />
-                <Dropdown.Item as={Link} to='/aboutus' text="About Us" />
+                <Dropdown.Item as={Link} to='/professionals' text="TestingTestimonials" />
                 <Dropdown.Item as={Link} to='/help' text="Help" />
-              </Dropdown.Menu>
             </Dropdown>
           </h1>
       </div>
