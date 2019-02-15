@@ -192,7 +192,7 @@ export class Overview extends Component {
           <a href="#bubbles-sec"><Icon name='arrow down' id="down-arrow" size='huge'/></a>
           <div id='bubbles'>
               <ScrollableAnchor id={'bubbles-sec'}>
-                <h1></h1>
+
               </ScrollableAnchor>
 
           </div>
