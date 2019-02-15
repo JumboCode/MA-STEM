@@ -1,6 +1,6 @@
 import React, { Component } from "react"; 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import "react-tabs/style/react-tabs.css";
+import "./style.css";
 
 
 export class StemProfessionals extends Component {
@@ -40,24 +40,31 @@ export class StemProfessionals extends Component {
             var content = Object.values(profile)[3][i].content
 
             tabTitle.push(<Tab> {title} </Tab>);
-            tabContent.push(<TabPanel> {content} </TabPanel>);
+            tabContent.push(<TabPanel className="tab-content"> {content} </TabPanel>);
         }
 
         return (
         	<div>
-	            <h1> Professionals Testimonials </h1>
-	            <h2> Discover How Real STEM Professionals Built Their Careers </h2>
-                <h4> {name} </h4>
-                <h5> {jobTitle} ~ {company} </h5>
-	            <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({ tabIndex })}>
+	            <h1 className="test-page-title"> Professionals Testimonials </h1>
+	            <h2 className="test-page-sub"> Discover How Real STEM Professionals Built Their Careers </h2>
                 
-                <TabList>
-                    {tabTitle}
-                </TabList>
 
-                {tabContent}
+                <div className="profile">
+                    <h4 className="name"> {name} </h4>
+                    <h5 className="job-comp"> {jobTitle} ~ {company} </h5>
 
-              </Tabs>
+    	            <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({ tabIndex })}>
+                    
+                        <TabList>
+                            {tabTitle}
+                        </TabList>
+
+                        
+                        {tabContent}
+
+                    </Tabs>
+
+                </div>
 
             </div>
         )
