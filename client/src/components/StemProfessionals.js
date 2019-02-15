@@ -27,6 +27,8 @@ export class StemProfessionals extends Component {
 
         var numTabs = Object.values(profile)[3].length;
 
+        var colors = []
+
         var tabTitle = []
         var tabContent = []
         var name = Object.values(profile)[0]

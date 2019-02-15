@@ -1,13 +1,8 @@
-.test-page-title {
-	text-align: center;
-	font-size: 40px;
-}
-
 .heading{
-  height:128px;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  width: 76%;
 }
 
 .test-page-sub {
@@ -33,7 +28,8 @@
 .profile {
 	background-color: white;
 	color: black;
-	padding: 2%;
+	margin-bottom: 5%;
+  padding-top: 2%;
 	border-radius: 25px;
 }
 
@@ -43,6 +39,7 @@
 	line-height: 35px;
 	background-color: #30E8E8;
 	border-radius: 25px;
+  font-family: Gill Sans, sans-serif;
 }
 
 /* tab styling */
@@ -68,7 +65,7 @@
   padding: 6px 12px;
   cursor: pointer;
 
-  font-size: 20px;
+  font-size: 22px;
   font-family: Marker Felt, fantasy;
   word-spacing: 4px;
   padding: 1.5%;
