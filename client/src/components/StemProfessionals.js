@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import "./style.css";
 
-
 export class StemProfessionals extends Component {
     constructor () {
         super()
@@ -44,28 +43,17 @@ export class StemProfessionals extends Component {
         }
 
         return (
-        	<div>
-	            <h1 className="test-page-title"> Professionals Testimonials </h1>
-	            <h2 className="test-page-sub"> Discover How Real STEM Professionals Built Their Careers </h2>
-                
-
+            <div>
+                <img className="heading" id="heading" alt="heading" src={require("../images/ptHeading.png")}/>
                 <div className="profile">
                     <h4 className="name"> {name} </h4>
-                    <h5 className="job-comp"> {jobTitle} ~ {company} </h5>
+                    <h5 className="job-comp"> {jobTitle}  ●  {company} </h5>
 
     	            <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({ tabIndex })}>
-                    
-                        <TabList>
-                            {tabTitle}
-                        </TabList>
-
-                        
+                        <TabList> {tabTitle} </TabList>
                         {tabContent}
-
                     </Tabs>
-
                 </div>
-
             </div>
         )
     }
