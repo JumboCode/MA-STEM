@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190211005043) do
+ActiveRecord::Schema.define(version: 20190224232709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,10 +73,12 @@ ActiveRecord::Schema.define(version: 20190211005043) do
   end
 
   create_table "professionals", force: :cascade do |t|
-    t.string "name"
-    t.string "title"
-    t.string "company"
-    t.string "education"
+    t.string   "name"
+    t.string   "title"
+    t.string   "company"
+    t.string   "education"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "resources", force: :cascade do |t|
@@ -90,8 +92,12 @@ ActiveRecord::Schema.define(version: 20190211005043) do
   end
 
   create_table "testimonials", force: :cascade do |t|
-    t.string "title"
-    t.string "content"
+    t.string   "title"
+    t.string   "content"
+    t.integer  "professional_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["professional_id"], name: "index_testimonials_on_professional_id", using: :btree
   end
 
 end
