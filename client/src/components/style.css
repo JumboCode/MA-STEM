@@ -37,7 +37,7 @@
 .tab-content {
 	font-size: 20px;
 	line-height: 35px;
-	background-color: #30E8E8;
+	/*background-color: #30E8E8;*/
 	border-radius: 25px;
   font-family: Gill Sans, sans-serif;
 }
@@ -72,7 +72,7 @@
 }
 
 .react-tabs__tab--selected {
-  background: #30E8E8;
+/*  background: #30E8E8;*/
   border-color: #aaa;
   color: black;
   border-radius: 5px 5px 0 0;
@@ -106,6 +106,27 @@
 .react-tabs__tab-panel--selected {
   display: block;
   padding: 2%;
-  background: #30E8E8;
+  /*background: yellow;*/
 
+}
+/* end of tab styling */
+
+.pink {
+  background: pink;
+}
+
+.orange {
+  background: orange;
+}
+
+.yellow {
+  background: yellow;
+}
+
+.green {
+  background: green;
+}
+
+.blue {
+  background: blue;
 }
