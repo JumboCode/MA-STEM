@@ -2,6 +2,26 @@ import React, { Component } from "react";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import "./style.css";
 
+const pink  = {
+    background: "#E830E1",
+};
+
+const orange  = {
+    background: "#E8AB30",
+};
+
+const yellow  = {
+    background: "#E8D330",
+};
+
+const green  = {
+    background: "#30E870",
+};
+
+const blue  = {
+    background: "#30E8E8",
+};
+
 export class StemProfessionals extends Component {
     constructor () {
         super()
@@ -26,17 +46,8 @@ export class StemProfessionals extends Component {
         var profile = require('./example_testimonial.json')
         var numTabs = Object.values(profile)[3].length;
 
-        /*var backgrounds = [{background: "background: pink"}, {background: "background: orange"}, {background: "background: yellow"}, {background: "background: green"}, {background: "background: blue"}];
-        */
-        var colors = {
-            "0": { background: "pink" }, 
-            "1": { background: "orange" }, 
-            "2": { background: "yellow" }, 
-            "3": { background: "green" }, 
-            "4": { background: "blue" } 
-        };
+        var colors = [pink, orange, yellow, green, blue];
 
-        var currColor
         var tabTitle = []
         var tabContent = []
         var name = Object.values(profile)[0]
@@ -47,18 +58,12 @@ export class StemProfessionals extends Component {
 
             var title = Object.values(profile)[3][i].title
             var content = Object.values(profile)[3][i].content
+            var colorClass = 'pink'
+            //var colorClass += colors[i]
+            console.log(colorClass)
 
-            Object.keys(colors).forEach(function(key) {
-                if (key === i.toString()) {
-                    currColor = colors[key];
-                }
-                console.log(currColor)
-            });
-
-            
-
-            tabTitle.push(<Tab style={{ currColor }}> {title} </Tab>);
-            tabContent.push(<TabPanel className="tab-content"> {content} </TabPanel>);
+            tabTitle.push(<Tab style={ colors[i] }> {title} </Tab>);
+            tabContent.push(<TabPanel style={ colors[i] } className="tab-content"> {content} </TabPanel>);
         }
 
         return (
