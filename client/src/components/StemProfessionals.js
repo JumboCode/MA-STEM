@@ -43,27 +43,32 @@ export class StemProfessionals extends Component {
 
     render () {
 
-        var profile = require('./example_testimonial.json')
-        var numTabs = Object.values(profile)[3].length;
-
+        var allProfiles = require('./example_testimonial.json')
+        var numProfiles = allProfiles.length
         var colors = [pink, orange, yellow, green, blue];
-
         var tabTitle = []
         var tabContent = []
-        var name = Object.values(profile)[0]
-        var jobTitle = Object.values(profile)[1]
-        var company = Object.values(profile)[2]
+        var numTabs
+        var profile
+        var name
+        var jobTitle
+        var company
+        var title
+        var content
 
-        for (var i = 0; i < numTabs; i++) {
+        for (var i = 0; i < 1; i++) {
+            profile = allProfiles[i];
+            name = Object.values(profile)[0]
+            jobTitle = Object.values(profile)[1]
+            company = Object.values(profile)[2]
+            numTabs = Object.values(profile)[3].length
 
-            var title = Object.values(profile)[3][i].title
-            var content = Object.values(profile)[3][i].content
-            var colorClass = 'pink'
-            //var colorClass += colors[i]
-            console.log(colorClass)
-
-            tabTitle.push(<Tab style={ colors[i] }> {title} </Tab>);
-            tabContent.push(<TabPanel style={ colors[i] } className="tab-content"> {content} </TabPanel>);
+            for (var i = 0; i < numTabs; i++) {
+                title = Object.values(profile)[3][i].title
+                content = Object.values(profile)[3][i].content
+                tabTitle.push(<Tab style={ colors[i] }> {title} </Tab>);
+                tabContent.push(<TabPanel style={ colors[i] } className="tab-content"> {content} </TabPanel>);
+            }
         }
 
         return (
