@@ -2,6 +2,26 @@ import React, { Component } from "react";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import "./style.css";
 
+const pink  = {
+    background: "#E830E1",
+};
+
+const orange  = {
+    background: "#E8AB30",
+};
+
+const yellow  = {
+    background: "#E8D330",
+};
+
+const green  = {
+    background: "#30E870",
+};
+
+const blue  = {
+    background: "#30E8E8",
+};
+
 export class StemProfessionals extends Component {
     constructor () {
         super()
@@ -24,10 +44,9 @@ export class StemProfessionals extends Component {
     render () {
 
         var profile = require('./example_testimonial.json')
-
         var numTabs = Object.values(profile)[3].length;
 
-        var colors = []
+        var colors = [pink, orange, yellow, green, blue];
 
         var tabTitle = []
         var tabContent = []
@@ -39,9 +58,12 @@ export class StemProfessionals extends Component {
 
             var title = Object.values(profile)[3][i].title
             var content = Object.values(profile)[3][i].content
+            var colorClass = 'pink'
+            //var colorClass += colors[i]
+            console.log(colorClass)
 
-            tabTitle.push(<Tab> {title} </Tab>);
-            tabContent.push(<TabPanel className="tab-content"> {content} </TabPanel>);
+            tabTitle.push(<Tab style={ colors[i] }> {title} </Tab>);
+            tabContent.push(<TabPanel style={ colors[i] } className="tab-content"> {content} </TabPanel>);
         }
 
         return (
@@ -51,7 +73,7 @@ export class StemProfessionals extends Component {
                     <h4 className="name"> {name} </h4>
                     <h5 className="job-comp"> {jobTitle}  ●  {company} </h5>
 
-    	            <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({ tabIndex })}>
+                    <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({ tabIndex })}>
                         <TabList> {tabTitle} </TabList>
                         {tabContent}
                     </Tabs>
