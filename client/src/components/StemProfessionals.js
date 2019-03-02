@@ -1,5 +1,6 @@
 import React, { Component } from "react"; 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { Button } from 'semantic-ui-react'
 import "./style.css";
 
 const pink  = {
@@ -22,6 +23,7 @@ const blue  = {
     background: "#30E8E8",
 };
 
+
 export class StemProfessionals extends Component {
     constructor () {
         super()
@@ -42,6 +44,7 @@ export class StemProfessionals extends Component {
     }
 
     render () {
+        const leftButton = () => <Button icon="angle left" align="left"></Button>
 
         var allProfiles = require('./example_testimonial.json')
         var numProfiles = allProfiles.length
@@ -54,7 +57,7 @@ export class StemProfessionals extends Component {
         var jobTitle
         var company
         var title
-        var content
+        var content 
 
         for (var i = 0; i < 1; i++) {
             profile = allProfiles[i];
@@ -74,15 +77,25 @@ export class StemProfessionals extends Component {
         return (
             <div>
                 <img className="heading" id="heading" alt="heading" src={require("../images/ptHeading.png")}/>
-                <div className="profile">
-                    <h4 className="name"> {name} </h4>
-                    <h5 className="job-comp"> {jobTitle}  ●  {company} </h5>
+                
+                <div className="containter">
 
-                    <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({ tabIndex })}>
-                        <TabList> {tabTitle} </TabList>
-                        {tabContent}
-                    </Tabs>
+                    <Button className="button-left" icon="angle left"></Button>
+
+                    <div className="profile">
+                        <h4 className="name"> {name} </h4>
+                        <h5 className="job-comp"> {jobTitle}  ●  {company} </h5>
+
+                        <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({ tabIndex })}>
+                            <TabList> {tabTitle} </TabList>
+                            {tabContent}
+                        </Tabs>
+                    </div>
+
+                    <Button className="button-right" icon="angle right"></Button>
+
                 </div>
+
             </div>
         )
     }
