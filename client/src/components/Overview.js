@@ -2,7 +2,7 @@ import React, { Component } from "react"; // eslint-disable-line no-unused-vars
 import { Button, Image, Icon, } from 'semantic-ui-react'
 import ScrollableAnchor from 'react-scrollable-anchor'
 import * as d3 from "d3";
-
+import Media from "react-media";
 export class Overview extends Component {
   constructor () {
     super();
@@ -183,20 +183,41 @@ export class Overview extends Component {
 
   render () {
     return (
-    	<div>
-      	<Button size='medium' id='main-btn'>
+    	
+      	
+          <Media query="(max-width: 460px)">
+          {matches =>
+            matches ? (
+              <div>
+              <Image id='expl' src={require('./STEMexplosion.svg')} size='large'/>
+              <Button size='large' id='main-btn'>
+              <Button.Content visible> Build Your Path To STEM 
+              <Image id='puzzle' src={require('../images/puzzle.svg')} /> </Button.Content>
+          </Button>
+          
+            </div>
+            ) : (
+            <div>
+            <Button size='medium' id='main-btn'>
               <Button.Content visible> Build Your Pathway To STEM 
               <Image id='puzzle' src={require('../images/puzzle.svg')} /> </Button.Content>
           </Button>
           <Image id='expl' src={require('./STEMexplosion.svg')} size='medium'/>
-          <a href="#bubbles-sec"><Icon name='arrow down' id="down-arrow" size='huge'/></a>
+              <a href="#bubbles-sec"><Icon name='arrow down' id="down-arrow" size='huge'/></a>
           <div id='bubbles'>
               <ScrollableAnchor id={'bubbles-sec'}>
                 <h1></h1>
               </ScrollableAnchor>
 
           </div>
-      </div>
+          </div>
+            )
+          }
+         
+        </Media>
+                
+      
+
       
 
     )
