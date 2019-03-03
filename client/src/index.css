@@ -156,6 +156,7 @@ tspan {
 .overlay {
   z-index:1;
   opacity: 1;
+  overflow-y: scroll;
   visibility: visible;
   font-size: 40px;
 font-family: 'Marker Felt', fantasy;
@@ -171,7 +172,7 @@ color: #fff;
   
 }
 .overlay a{
-font-size: 40px;
+font-size: 10vw;
 font-family: 'Marker Felt', fantasy;
 color: #fff;
   display: block;
@@ -182,7 +183,7 @@ color: #fff;
 .overlay nav {
   text-align: center;
   position: relative;
-  top: 10%;
+  top: 5%;
   height: 60%;
   font-size: 80px;
 }
@@ -193,6 +194,12 @@ color: #fff;
   display: inline-block;
   height: 100%;
   position: relative;
+}
+.overlay hr{
+  color: white;
+  margin-block-start: 5vw;
+  margin-block-end: 5vw;
+
 }
 .overlay ul li a{
 font-size: 40px;
@@ -213,6 +220,7 @@ color: #fff;
   float: right;
   border: 1px solid #000;
   font-size: 14px;
+  z-index: 5;
 }
 .overlay-data {
   display: none;

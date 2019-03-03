@@ -34,6 +34,7 @@ export class HeaderBar extends Component {
     this.toggleOverlay = this.toggleOverlay.bind(this)
   }
  toggleOverlay (){
+  console.log("hi")
   this.setState({
       addClass: !this.state.addClass
     });
@@ -57,13 +58,20 @@ export class HeaderBar extends Component {
       <nav>
         <ul>
         <Segment.Group>
-    <Segment vertical><Link to ={'/resources'} onClick ={this.toggleOverlay.bind(this)}> Resources </Link></Segment>
-    <Divider inverted/>
-    <Segment vertical><Link to ={'/admin'} onClick ={this.toggleOverlay.bind(this)}> Admin </Link></Segment>
-    <Divider inverted/>
-    <Segment vertical><Link to ={'/aboutus'} onClick ={this.toggleOverlay.bind(this)}> About Us </Link></Segment>
-   <Divider inverted/>
-    <Segment vertical><Link to ={'/help'} onClick ={this.toggleOverlay.bind(this)}> Help </Link></Segment>
+    <Segment vertical><Link to ={'/resources'} onClick ={this.toggleOverlay.bind(this)}> Our Vision </Link></Segment>
+    <hr/>
+    <Segment vertical><Link to ={'/admin'} onClick ={this.toggleOverlay.bind(this)}> Design Your Future </Link></Segment>
+    <hr/>
+    <Segment vertical><Link to ={'/professionals'} onClick ={this.toggleOverlay.bind(this)}> Testimonials </Link></Segment>
+   <hr/>
+    <Segment vertical><Link to ={'/pathways'} onClick ={this.toggleOverlay.bind(this)}> Build Your Path </Link></Segment>
+    <hr/>
+ <Segment vertical><Link to ={'/admin'} onClick ={this.toggleOverlay.bind(this)}> College/Certificate Programs </Link></Segment>
+    <hr/>
+    <Segment vertical><Link to ={'/aboutus'} onClick ={this.toggleOverlay.bind(this)}> After School Programs </Link></Segment>
+   <hr/>
+    <Segment vertical><Link to ={'/help'} onClick ={this.toggleOverlay.bind(this)}> Summer Programs </Link></Segment>
+ 
   </Segment.Group>
 
         </ul>
