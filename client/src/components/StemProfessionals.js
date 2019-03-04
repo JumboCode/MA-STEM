@@ -57,10 +57,31 @@ export class StemProfessionals extends Component {
         var jobTitle
         var company
         var title
-        var content 
+        var content
+        var currProfile = 0 
 
-        for (var i = 0; i < 1; i++) {
-            profile = allProfiles[i];
+        // for (var i = 0; i < 2; i++) {
+        //     profile = allProfiles[i];
+        //     name = Object.values(profile)[0]
+        //     jobTitle = Object.values(profile)[1]
+        //     company = Object.values(profile)[2]
+        //     numTabs = Object.values(profile)[3].length
+
+        //     for (var i = 0; i < numTabs; i++) {
+        //         title = Object.values(profile)[3][i].title
+        //         content = Object.values(profile)[3][i].content
+        //         tabTitle.push(<Tab style={ colors[i] }> {title} </Tab>);
+        //         tabContent.push(<TabPanel style={ colors[i] } className="tab-content"> {content} </TabPanel>);
+        //     }
+        // }
+
+        function nextProfile(curr) {
+            console.log("currProfile=" + curr)
+
+            tabTitle = []
+            tabContent = []
+
+            profile = allProfiles[curr];
             name = Object.values(profile)[0]
             jobTitle = Object.values(profile)[1]
             company = Object.values(profile)[2]
@@ -92,7 +113,7 @@ export class StemProfessionals extends Component {
                         </Tabs>
                     </div>
 
-                    <Button className="button-right" icon="angle right"></Button>
+                    <Button onClick={nextProfile(currProfile++)} className="button-right" icon="angle right"></Button>
 
                 </div>
 
