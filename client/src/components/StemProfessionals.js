@@ -1,5 +1,6 @@
 import React, { Component } from "react"; 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { Button } from 'semantic-ui-react'
 import "./style.css";
 
 const pink  = {
@@ -22,6 +23,7 @@ const blue  = {
     background: "#30E8E8",
 };
 
+
 export class StemProfessionals extends Component {
     constructor () {
         super()
@@ -42,6 +44,7 @@ export class StemProfessionals extends Component {
     }
 
     render () {
+        const leftButton = () => <Button icon="angle left" align="left"></Button>
 
         var allProfiles = require('./example_testimonial.json')
         var numProfiles = allProfiles.length
@@ -55,9 +58,30 @@ export class StemProfessionals extends Component {
         var company
         var title
         var content
+        var currProfile = 0 
 
-        for (var i = 0; i < 1; i++) {
-            profile = allProfiles[i];
+        // for (var i = 0; i < 2; i++) {
+        //     profile = allProfiles[i];
+        //     name = Object.values(profile)[0]
+        //     jobTitle = Object.values(profile)[1]
+        //     company = Object.values(profile)[2]
+        //     numTabs = Object.values(profile)[3].length
+
+        //     for (var i = 0; i < numTabs; i++) {
+        //         title = Object.values(profile)[3][i].title
+        //         content = Object.values(profile)[3][i].content
+        //         tabTitle.push(<Tab style={ colors[i] }> {title} </Tab>);
+        //         tabContent.push(<TabPanel style={ colors[i] } className="tab-content"> {content} </TabPanel>);
+        //     }
+        // }
+
+        function nextProfile(curr) {
+            console.log("currProfile=" + curr)
+
+            tabTitle = []
+            tabContent = []
+
+            profile = allProfiles[curr];
             name = Object.values(profile)[0]
             jobTitle = Object.values(profile)[1]
             company = Object.values(profile)[2]
@@ -74,15 +98,25 @@ export class StemProfessionals extends Component {
         return (
             <div>
                 <img className="heading" id="heading" alt="heading" src={require("../images/ptHeading.png")}/>
-                <div className="profile">
-                    <h4 className="name"> {name} </h4>
-                    <h5 className="job-comp"> {jobTitle}  ●  {company} </h5>
+                
+                <div className="containter">
 
-                    <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({ tabIndex })}>
-                        <TabList> {tabTitle} </TabList>
-                        {tabContent}
-                    </Tabs>
+                    <Button className="button-left" icon="angle left"></Button>
+
+                    <div className="profile">
+                        <h4 className="name"> {name} </h4>
+                        <h5 className="job-comp"> {jobTitle}  ●  {company} </h5>
+
+                        <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({ tabIndex })}>
+                            <TabList> {tabTitle} </TabList>
+                            {tabContent}
+                        </Tabs>
+                    </div>
+
+                    <Button onClick={nextProfile(currProfile++)} className="button-right" icon="angle right"></Button>
+
                 </div>
+
             </div>
         )
     }
