@@ -1,7 +1,8 @@
 import React, { Component } from "react"; // eslint-disable-line no-unused-vars
-import { Dropdown, Container, Divider, Segment } from 'semantic-ui-react';
+import { Dropdown, Segment } from 'semantic-ui-react';
 import { Link } from "react-router-dom";
 import Media from "react-media";
+import logo from '../images/MAStemLogoBIG.png';
 const logoStyle = {
   width: "20vw",
   marginLeft: "10px",
@@ -15,16 +16,7 @@ const DropdownStyle = {
   display: "inline",
   float: "right"
 };  
-const OverlayStyle ={
-  position: "absolute",
-  bottom: "100%",
-  left: "0",
-  right: "0",
-  backgroundColor: "#008CBA",
-  overflow: "hidden",
-  bottom: "0",
-  height: "100%",
-}
+
 
 
 export class HeaderBar extends Component {
@@ -34,14 +26,12 @@ export class HeaderBar extends Component {
     this.toggleOverlay = this.toggleOverlay.bind(this)
   }
  toggleOverlay (){
-  console.log("hi")
   this.setState({
       addClass: !this.state.addClass
     });
  }
   render () {
-    let boxClass = this.refs.overlay;
-    const {addClass} = this.state
+    
     
     return (
       
@@ -50,7 +40,7 @@ export class HeaderBar extends Component {
              matches ? (
               <div>
               <h1>
-            <img id='logo' alt='logo' src={require("../images/MAStemLogoBIG.png")} style={logoStyle} />
+            <img id='logo' alt='logo' src={logo} style={logoStyle} />
          
     <span className="menuButton" id="dropdown" onClick ={this.toggleOverlay.bind(this)}>&#9776;</span>
 <div className={this.state.addClass ? 'overlay': 'overlay-data'}>
@@ -84,7 +74,7 @@ export class HeaderBar extends Component {
 
       <div>
           <h1>
-            <img id='logo' alt='logo' src={require("../images/MAStemLogoBIG.png")} style={logoStyle} />
+            <img id='logo' alt='logo' src={logo} style={logoStyle} />
             <Dropdown id='dropdown' icon="sidebar" style={DropdownStyle}>
               <Dropdown.Menu>
                 <Dropdown.Item as={Link} to='/resources' text="Resources" />
