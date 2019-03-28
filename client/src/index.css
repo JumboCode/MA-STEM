@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Caveat+Brush');
-
 #main-btn {
 	font-size: 1.7em;
 	font-family: 'Caveat Brush', cursive;
@@ -12,6 +11,7 @@
 	margin-top: 40vh;
 	color: black;
 }
+
 
 #landing-image-1 {
     background-image: linear-gradient(to bottom, #020240, #040498) !important;
@@ -103,4 +103,133 @@ body {
 
 tspan {
 	display: block;
+}
+
+@media screen and (max-width: 460px) {
+  #main-btn{
+
+	font-size: 1.7em;
+	font-family: 'Caveat Brush', cursive;
+	border-radius: 15px;
+	background-color: white;
+	box-shadow: 2px 2px 4px #d1cfcf;
+	height: 10vh;
+	width: auto;
+	margin-left: 8vw;
+	margin-top: 8vw;
+	color: black;
+}
+#expl {
+	float: right;
+	width: 65vw;
+}
+#puzzle {
+	width: 10vw;
+}
+#dropdown{
+  width: 2.5vw;
+  margin-top: 1vw;
+  margin-right: 10vw;
+  display: inline;
+  float: right;
+}
+
+#overlay-menu {
+  width: 100px;
+  height: 50px;
+}
+
+.menuButton {
+  text-indent: 0;
+  border: 1px solid #000;
+  color: #fff;
+
+  font-weight: bold;
+}
+.menuButton:hover {
+  background-color: #474747;
+}
+.menuButton:active {
+  position: relative;
+  top: 1px;
+}
+.overlay {
+  z-index:1;
+  opacity: 1;
+  overflow-y: scroll;
+  visibility: visible;
+  font-size: 40px;
+font-family: 'Marker Felt', fantasy;
+color: #fff;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #01032E;
+  
+}
+.overlay a{
+font-size: 10vw;
+font-family: 'Marker Felt', fantasy;
+color: #fff;
+  display: block;
+  height: 20%;
+  list-style: none;
+	color:white;
+}
+.overlay nav {
+  text-align: center;
+  position: relative;
+  top: 5%;
+  height: 60%;
+  font-size: 80px;
+}
+.overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  height: 100%;
+  position: relative;
+}
+.overlay hr{
+  color: white;
+  margin-block-start: 5vw;
+  margin-block-end: 5vw;
+
+}
+.overlay ul li a{
+font-size: 40px;
+font-family: 'Marker Felt', fantasy;
+color: #fff;
+  display: block;
+  height: 20%;
+  list-style: none;
+  border-bottom: 1px solid white;
+}
+
+.overlay-close {
+ position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  position: absolute;
+  float: right;
+  border: 1px solid #000;
+  font-size: 14px;
+  z-index: 5;
+}
+.overlay-data {
+  display: none;
+  opacity: 0;
+  visibility: none;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  visibility: 0s 0.5s;
+  transition: opacity 0.5s, visibility 0s 0.5s;
+}
+
 }

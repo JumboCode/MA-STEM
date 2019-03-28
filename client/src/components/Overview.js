@@ -2,7 +2,9 @@ import React, { Component } from "react"; // eslint-disable-line no-unused-vars
 import { Button, Image, Icon, } from 'semantic-ui-react'
 import ScrollableAnchor from 'react-scrollable-anchor'
 import * as d3 from "d3";
-
+import Media from "react-media";
+import puzzPic from '../images/puzzle.svg'
+import explosion from '../images/STEMexplosion.svg'
 export class Overview extends Component {
   constructor () {
     super();
@@ -101,7 +103,7 @@ export class Overview extends Component {
 
     // Name 2 append
     textGroup.append("tspan")
-    .attr("x", (d, i) => {
+    .attr("x", (d) => {
       if ('name2' in d) {
         var strLen = d.name2.length;
         if (strLen > 7) {
@@ -115,7 +117,7 @@ export class Overview extends Component {
         return d.x - 35
       }
     })
-    .attr("y", (d, i) => {
+    .attr("y", (d) => {
       return ('name2' in d && !('name3' in d))? d.y + 30: d.y + 15;
     })
     .text(d => {return d.name2})
@@ -125,7 +127,7 @@ export class Overview extends Component {
     textGroup.append("tspan")
     .attr("id", (d, i) => 
       {return "name3-" + i})
-    .attr("x", (d, i) => {
+    .attr("x", (d) => {
       if ('name3' in d) {
         let strLen = d.name3.length;
         return (strLen > 6)? d.x - 55: (strLen > 5)? d.x - 43: d.x - 33;
@@ -183,20 +185,40 @@ export class Overview extends Component {
 
   render () {
     return (
-    	<div>
-      	<Button size='medium' id='main-btn'>
-              <Button.Content visible> Build Your Pathway To STEM 
-              <Image id='puzzle' src={require('../images/puzzle.svg')} /> </Button.Content>
+
+      <Media query="(max-width: 460px)">
+          {matches =>
+            matches ? (
+              <div>
+              <Image id='expl' src={explosion} size='large'/>
+              <Button size='large' id='main-btn'>
+              <Button.Content visible> Build Your Path To STEM 
+              <Image id='puzzle' src={puzzPic} /> </Button.Content>
           </Button>
-          <Image id='expl' src={require('./STEMexplosion.svg')} size='medium'/>
-          <a href="#bubbles-sec"><Icon name='arrow down' id="down-arrow" size='huge'/></a>
+          
+            </div>
+            ) : (
+            <div>
+            <Button size='medium' id='main-btn'>
+              <Button.Content visible> Build Your Pathway To STEM 
+              <Image id='puzzle' src={puzzPic} /> </Button.Content>
+          </Button>
+          <Image id='expl' src={explosion} size='medium'/>
+              <a href="#bubbles-sec"><Icon name='arrow down' id="down-arrow" size='huge'/></a>
           <div id='bubbles'>
               <ScrollableAnchor id={'bubbles-sec'}>
                 <h1></h1>
               </ScrollableAnchor>
 
           </div>
-      </div>
+          </div>
+            )
+          }
+         
+        </Media>
+                
+      
+
       
 
     )
