@@ -12,7 +12,7 @@
     "react-media": "^1.9.2",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "^2.1.5",
+    "react-scripts": "^2.1.8",
     "react-scrollable-anchor": "^0.6.1",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.85.0",
@@ -34,8 +34,10 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "eslint": "^5.12.0",
     "eslint-config-google": "^0.12.0",
     "eslint-plugin-react": "^7.12.4",
-    "svg-inline-loader": "^0.8.0"
+    "svg-inline-loader": "^0.8.0",
+    "braces": "^2.3.1"
   }
 }
