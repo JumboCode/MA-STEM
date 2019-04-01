@@ -1,2 +1,0 @@
-class IngredientsController < ApiController
-end
