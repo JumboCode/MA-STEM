@@ -1,0 +1,161 @@
+.container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1200px;
+  vertical-align: middle;
+}
+
+.heading{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 76%;
+}
+
+.test-page-sub {
+	text-align: center;
+}
+
+.name {
+	text-align: center;
+	font-family: Marker Felt, fantasy;
+	font-size: 40px;
+	margin-bottom: -30px;
+}
+
+.job-comp {
+	text-align: center;
+	font-weight: 400;
+	font-family: Gill Sans, sans-serif;
+	font-size: 20px;
+	text-transform: uppercase;
+
+}
+
+.button-left {
+  display: inline-block;
+  float: left;
+  width: 5vw;
+  height: 5vw;
+  width: 5%;
+}
+
+.button-right {
+  display: inline-block;
+  float: left;
+  width: 5vw;
+  height: 5vw;
+  width: 5%;
+}
+
+.profile {
+	background-color: white;
+	color: black;
+	margin-bottom: 5%;
+  padding-top: 2%;
+	border-radius: 25px;
+  width: 89%;
+
+  float:left;
+  display: inline-block;
+}
+
+
+.tab-content {
+	font-size: 20px;
+	line-height: 35px;
+	/*background-color: #30E8E8;*/
+	border-radius: 25px;
+  font-family: Gill Sans, sans-serif;
+  padding-top: -30px;
+}
+
+/* tab styling */
+
+.react-tabs {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.react-tabs__tab-list {
+  border-bottom: 1px solid #aaa;
+  margin: 0 0 10px;
+  padding: 0;
+  text-align: center;
+}
+
+.react-tabs__tab {
+  display: inline-block;
+  border: 1px solid transparent;
+  border-bottom: none;
+  bottom: -1px;
+  position: relative;
+  list-style: none;
+  padding: 6px 12px;
+  cursor: pointer;
+
+  font-size: 22px;
+  font-family: Marker Felt, fantasy;
+  word-spacing: 4px;
+  padding: 1.5%;
+}
+
+.react-tabs__tab--selected {
+/*  background: #30E8E8;*/
+  border-color: #aaa;
+  color: black;
+  border-radius: 5px 5px 0 0;
+}
+
+.react-tabs__tab--disabled {
+  color: GrayText;
+  cursor: default;
+}
+
+.react-tabs__tab:focus {
+  box-shadow: 0 0 5px hsl(208, 99%, 50%);
+  border-color: hsl(208, 99%, 50%);
+  outline: none;
+}
+
+.react-tabs__tab:focus:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  left: -4px;
+  right: -4px;
+  bottom: -5px;
+  background: #fff;
+}
+
+.react-tabs__tab-panel {
+  display: none;
+}
+
+.react-tabs__tab-panel--selected {
+  display: block;
+  padding: 2%;
+  /*background: yellow;*/
+
+}
+/* end of tab styling */
+
+.pink {
+  background: pink;
+}
+
+.orange {
+  background: orange;
+}
+
+.yellow {
+  background: yellow;
+}
+
+.green {
+  background: green;
+}
+
+.blue {
+  background: blue;
+}
