@@ -28,8 +28,8 @@ const blue  = {
 export class StemProfessionals extends Component {
     constructor () {
         super()
-        this.state = { tabIndex: 0, 
-                first: true,
+        this.state = { 
+                tabIndex: 0, 
                 profile: 0 }
     }
 
@@ -63,18 +63,12 @@ export class StemProfessionals extends Component {
         var content
         var currProfile = 0
 
-        //we wanted to only initialize currProfile to 0 when its the first initial run through
-        if (this.state.first == true)
-        {
-            currProfile = 0;
-            this.state.profile = 0;
-        } else if (this.state.profile >= allProfiles.length) {
+        //makes sure profile number stays in range
+        if (this.state.profile >= allProfiles.length) {
             this.state.profile = 0;
         } else if (this.state.profile < 0) {
             this.state.profile = allProfiles.length - 1;
         }
-
-        this.state.first = false;
 
         //creates profile
         profile = allProfiles[this.state.profile];
@@ -90,15 +84,14 @@ export class StemProfessionals extends Component {
             tabTitle.push(<Tab style={ colors[i] }> {title} </Tab>);
             tabContent.push(<TabPanel style={ colors[i] } className="tab-content"> {content} </TabPanel>);
         }
-
+             
         return (
             <div>
                 <img className="heading" id="heading" alt="heading" src={require("../images/ptHeading.png")}/>
                 
                 <div className="containter">
 
-                    <Button onClick={()=>{ this.setState({ profile : this.state.profile - 1 }) }} className="button-left" icon="angle left"></Button>
-
+                    <img onClick={()=>{ this.setState({ profile : this.state.profile - 1 }) }} className="button-left" alt="button-left" src={require("../images/left-arrow.png")}/>
                     <div className="profile">
                         <h4 className="name"> {name} </h4>
                         <h5 className="job-comp"> {jobTitle}  ●  {company} </h5>
@@ -109,7 +102,8 @@ export class StemProfessionals extends Component {
                         </Tabs>
                     </div>
 
-                    <Button onClick={()=>{ this.setState({ profile : this.state.profile + 1 }) }} className="button-right" icon="angle right"></Button>
+                    <img onClick={()=>{ this.setState({ profile : this.state.profile + 1 }) }} className="button-right" alt="button-right" src={require("../images/right-arrow.png")}/>
+                    
                 </div>
 
             </div>
