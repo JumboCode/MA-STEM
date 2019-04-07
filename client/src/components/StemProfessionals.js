@@ -28,9 +28,9 @@ const blue  = {
 export class StemProfessionals extends Component {
     constructor () {
         super()
-        //this.state = { tabIndex: 0 }
         this.state = { tabIndex: 0, 
-                first: true }
+                first: true,
+                profile: 0 }
     }
 
     componentDidMount() {
@@ -66,16 +66,18 @@ export class StemProfessionals extends Component {
         //we wanted to only initialize currProfile to 0 when its the first initial run through
         if (this.state.first == true)
         {
-            console.log("first state");
             currProfile = 0;
+            this.state.profile = 0;
+        } else if (this.state.profile >= allProfiles.length) {
+            this.state.profile = 0;
+        } else if (this.state.profile < 0) {
+            this.state.profile = allProfiles.length - 1;
         }
 
         this.state.first = false;
 
-
-        console.log("here");
         //creates profile
-        profile = allProfiles[currProfile];
+        profile = allProfiles[this.state.profile];
         name = Object.values(profile)[0]
         jobTitle = Object.values(profile)[1]
         company = Object.values(profile)[2]
@@ -89,45 +91,13 @@ export class StemProfessionals extends Component {
             tabContent.push(<TabPanel style={ colors[i] } className="tab-content"> {content} </TabPanel>);
         }
 
-        function nextProfile(curr) {
-            //var curr = 0;
-            console.log("currProfile=" + curr)
-            console.log(allProfiles[1]);
-            tabTitle = []
-            tabContent = []
-            //this.forceUpdate();
-
-            //this doesn't do anything because it's rewritten 
-            profile = allProfiles[curr];
-            name = Object.values(profile)[0]
-            jobTitle = Object.values(profile)[1]
-            company = Object.values(profile)[2]
-            numTabs = Object.values(profile)[3].length
-
-            for (var i = 0; i < numTabs; i++) {
-                title = Object.values(profile)[3][i].title
-                content = Object.values(profile)[3][i].content
-                tabTitle.push(<Tab style={ colors[i] }> {title} </Tab>);
-                tabContent.push(<TabPanel style={ colors[i] } className="tab-content"> {content} </TabPanel>);
-            }
-
-            // var element = (
-            //     <div className="profile">
-            //         <h4 className="name"> {name} </h4>
-            //         <h5 className="job-comp"> {jobTitle}  ●  {company} </h5>
-            //     </div>
-            // );
-            // ReactDOM.render(element, document.getElementsByClassName('profile'));
-        }
-
-
         return (
             <div>
                 <img className="heading" id="heading" alt="heading" src={require("../images/ptHeading.png")}/>
                 
                 <div className="containter">
 
-                    <Button className="button-left" icon="angle left"></Button>
+                    <Button onClick={()=>{ this.setState({ profile : this.state.profile - 1 }) }} className="button-left" icon="angle left"></Button>
 
                     <div className="profile">
                         <h4 className="name"> {name} </h4>
@@ -139,7 +109,7 @@ export class StemProfessionals extends Component {
                         </Tabs>
                     </div>
 
-                    <Button onClick={()=>{ nextProfile(currProfile++); }} className="button-right" icon="angle right"></Button>
+                    <Button onClick={()=>{ this.setState({ profile : this.state.profile + 1 }) }} className="button-right" icon="angle right"></Button>
                 </div>
 
             </div>
