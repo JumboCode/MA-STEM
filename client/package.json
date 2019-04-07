@@ -1,6 +1,9 @@
 {
   "name": "ma-stem-client",
   "version": "0.1.0",
+  "engines": {
+    "node": "10.11.0"
+  },
   "private": true,
   "dependencies": {
     "d3": "^5.7.0",
