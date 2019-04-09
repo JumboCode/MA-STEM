@@ -66,6 +66,8 @@ brew install node
 npm i
 ```
 ## Rails API: Current Working Routes
+`GET /testimonials`: returns JSON data containing all Professionals and their associated Testimonials.
+
 `GET /resources`: returns JSON data containing all Resource objects in the database. 
 
 `GET /resources/r_type/:r_type`: returns JSON data containing Resource object with given r_type.
