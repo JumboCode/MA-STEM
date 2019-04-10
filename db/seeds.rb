@@ -46,3 +46,48 @@ path = Professionalpath.create(
   description: "I started Facebook",
   contact: "Find me on Facebook",
 )
+
+prof1 = Professional.create(
+  name: "Mohsin Rizvi",
+  title: "Developer",
+  company: "JumboCode",
+  education: "Tufts",
+)
+
+prof2 = Professional.create(
+  name: "Dan Cetlin",
+  title: "Project Manager",
+  company: "JumboCode",
+  education: "Tufts",
+)
+
+prof3 = Professional.create(
+  name: "Caroline Kaufman",
+  title: "Project Manager",
+  company: "JumboCode",
+  education: "Tufts",
+)
+
+tsm1 = Testimonial.create(
+  title: "Testimonial 1",
+  content: "Hi!",
+  professional_id: 1,
+)
+
+tsm2 = Testimonial.create(
+  title: "Testimonial 2",
+  content: "Hi! Hi!",
+  professional_id: 1,
+)
+
+tsm3 = Testimonial.create(
+  title: "Testimonial 3",
+  content: "Hi! Hi! Hi!",
+  professional_id: 2,
+)
+
+tsm4 = Testimonial.create(
+  title: "Testimonial 4",
+  content: "Hi! Hi! Hi! Hi!",
+  professional_id: 3,
+)

@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   post '/professionalpaths/delete', to: 'professionalpaths#destroy'
   post '/professionalpaths/update', to: 'professionalpaths#update'
 
+  get '/testimonials', to: 'testimonials#index'
+
   scope '/api' do
 
   end
